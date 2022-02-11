@@ -1,0 +1,37 @@
+TRAVEL PLANNER
+Our web application offers non-members the ability to not only calculate currency conversion but also retrieve simple weather information about a location.
+By signing up, members gain the ability to save locations they want to visit on their trip, as well as the method of travel associated with travelling there.
+
+
+
+USER STORIES
+user
+	(conversion) - NO LOGIN REQ
+	- user can view exchange rate between two locations
+
+	(weather) - NO LOGIN REQ
+	- user can view weather at a given travel location
+
+	(auth)
+	- user can register
+	- user can login
+	- user can delete their own account
+
+	(planner)
+	- user can save a itinerary
+	  - travel path
+	  - travel method
+	  - total distance
+
+
+
+admin
+	- admin can access any user account
+		- admin can reset password for a user account
+		- admin can delete a user account
+
+
+
+BONUS STORIES
+- warn user about certain situations (i.e., COVID-19) in target country
+- recommended restaurants of a location
