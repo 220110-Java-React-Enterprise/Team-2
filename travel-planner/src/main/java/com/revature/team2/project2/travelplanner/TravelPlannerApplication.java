@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TravelPlannerApplication {
 
 	public static void main(String[] args) {
-		System.out.println("log message");
 		SpringApplication.run(TravelPlannerApplication.class, args);
 	}
 
