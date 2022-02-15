@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/things")
 public class ThingController {
     @GetMapping("/ping")
+    // equivalent to:
+    //   @RequestMapping(value = "/ping", method = RequestMethod.GET)
     public String ping() {
         return "pong-thing!";
     }
