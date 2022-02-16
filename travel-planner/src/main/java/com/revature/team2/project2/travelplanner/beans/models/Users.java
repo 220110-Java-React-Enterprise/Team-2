@@ -9,16 +9,16 @@ public class Users {
     @Column(name = "user_id")
     private Integer user_id;
 
-    @Column
+    @Column(name = "first_name")
     private String firstName;
 
-    @Column
+    @Column(name = "last_name")
     private String lastName;
 
-    @Column
+    @Column(name = "user_name")
     private String userName;
 
-    @Column
+    @Column(name = "password")
     private String password;
 
     public Users() {

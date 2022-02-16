@@ -1,6 +1,7 @@
 package com.revature.team2.project2.travelplanner.beans.controllers;
 
 import com.revature.team2.project2.travelplanner.beans.respositories.AdminRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AdminController {
     private final AdminRepository adminRepository;
 
+    @Autowired
     public AdminController(AdminRepository adminRepository) {
         this.adminRepository = adminRepository;
     }
