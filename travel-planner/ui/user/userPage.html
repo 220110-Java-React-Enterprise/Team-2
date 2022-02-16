@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <h1>User Page</h1>
+  <!--replace User with first_name's of logged in user-->
+  <body>
+    <p>Itinerary:<br />
+        <label for="strating_point">Where are you starting your trip?</label>
+        <input type="text" id="strating_point" name="strating_point" value="">
+        <button>Add</button><br/>
+        <!--add to table-->
+
+        <label for="destination">Add destination</label>
+        <input type="text" id="destination" name="destination" value="">
+        <button>Add</button><br/>
+        <!--add destination to table-->
+
+        <label for="travel_method">How are you getting there?</label>
+        <input type="text" id="travel_method" name="travel_method" value="">
+        <button>Add</button><br/>
+        <!--add method to table-->
+        <!--calculate and display distance-->
+        <!--calculate total distance traveled during trip-->
+
+        <table>
+          <tr>
+            <th>Start</th>
+            <th>Destination</th>
+            <th>Distance</th>
+          </tr>
+        </table>
+    </p>
+
+    <p>Delete User Profile
+      <!-- .. in directory name means move up to parent dir then find next one-->
+      <button><a href="../admin/delete.html">Delete Profile</a></button><br>
+    </p>
+  </body>
+</html>
