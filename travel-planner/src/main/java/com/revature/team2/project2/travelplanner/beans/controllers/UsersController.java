@@ -24,25 +24,25 @@ public class UsersController {
 
     // GET all users
     @RequestMapping(method = RequestMethod.GET)
-    public List<Users> getAllAdmin(){
+    public List<Users> getAllUsers(){
        return usersRepository.findAll();
     }
 
     // GET a user by ID
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public Users getAdminById(Integer id){
+    public Users getUserById(Integer id){
         return usersRepository.getById(id);
     }
 
     // POST a user
     @RequestMapping(method = RequestMethod.POST)
-    public void postAdmin(Users user){
+    public void postUser(Users user){
         usersRepository.save(user);
     }
 
     // DELETE a user by ID
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public void deleteAdmin(Integer id){
+    public void deleteUserById(Integer id){
         usersRepository.deleteById(id);
     }
 

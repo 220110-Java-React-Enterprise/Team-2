@@ -33,6 +33,7 @@ public class AdminController {
     public Admin getAdminById(Integer id){
         return adminRepository.getById(id);
     }
+
     // POST and administrator
     @RequestMapping(method = RequestMethod.POST)
     public void postAdmin(Admin admin){
