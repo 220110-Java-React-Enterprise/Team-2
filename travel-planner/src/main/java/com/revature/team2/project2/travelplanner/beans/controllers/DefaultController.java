@@ -3,10 +3,10 @@ package com.revature.team2.project2.travelplanner.beans.controllers;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 
 @RestController
-@Log4j2
+@Slf4j
 public class DefaultController {
     @GetMapping("/ping")
     public String ping() {
@@ -17,7 +17,6 @@ public class DefaultController {
     public String log() {
         // some of the available logging methods
         log.info("info log");
-        log.debug("debug log");
         log.warn("warn log");
         log.error("error log");
 
@@ -26,7 +25,7 @@ public class DefaultController {
             throw new Exception("exception thrown");
         } catch (Exception e) {
             // other logging methods can be used, this seems to do stack trace and indicate that an exception was caught
-            log.catching(e);
+            log.error(e.getMessage(), e);
         }
 
         return "sample log generated!";
