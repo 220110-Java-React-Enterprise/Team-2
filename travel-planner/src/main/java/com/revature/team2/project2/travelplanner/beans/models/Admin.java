@@ -1,7 +1,5 @@
 package com.revature.team2.project2.travelplanner.beans.models;
 
-import lombok.Cleanup;
-
 import javax.persistence.*;
 
 @Entity

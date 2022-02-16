@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
  * Acts as a servlet for HTTP requests
  */
 @RestController
-@RequestMapping("admin")
+@RequestMapping("/admin")
 public class AdminController {
 }
