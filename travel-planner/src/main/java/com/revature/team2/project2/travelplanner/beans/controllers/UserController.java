@@ -4,9 +4,7 @@ import com.revature.team2.project2.travelplanner.beans.models.User;
 import com.revature.team2.project2.travelplanner.beans.repositories.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -31,20 +29,21 @@ public class UserController {
 
     // GET a user by ID
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public User getUserById(Integer id){
+    public User getUserById(@PathVariable Integer id){
         return userRepository.getById(id);
     }
 
     // POST a user
     @RequestMapping(method = RequestMethod.POST)
-    public void postUser(User user){
+    public void postUser(@RequestBody User user){
         userRepository.save(user);
     }
 
     // DELETE a user by ID
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public void deleteUserById(Integer id){
+    public void deleteUserById(@PathVariable Integer id){
         userRepository.deleteById(id);
     }
+
 
 }
