@@ -12,7 +12,7 @@ import java.util.List;
  * Acts as a servlet for HTTP requests
  */
 @RestController // @Response and @Controller are implied by @RestController
-@RequestMapping("/admin")
+@RequestMapping("/admins")
 public class AdminController {
     private final AdminRepository adminRepository;
 
