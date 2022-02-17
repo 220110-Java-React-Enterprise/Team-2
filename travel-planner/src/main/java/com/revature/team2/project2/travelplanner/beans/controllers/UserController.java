@@ -1,7 +1,7 @@
 package com.revature.team2.project2.travelplanner.beans.controllers;
 
-import com.revature.team2.project2.travelplanner.beans.models.Users;
-import com.revature.team2.project2.travelplanner.beans.repositories.UsersRepository;
+import com.revature.team2.project2.travelplanner.beans.models.User;
+import com.revature.team2.project2.travelplanner.beans.repositories.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,36 +15,36 @@ import java.util.List;
  */
 @RestController // @Response and @Controller are implied by @RestController
 @RequestMapping("/users")
-public class UsersController {
-    private UsersRepository usersRepository;
+public class UserController {
+    private UserRepository userRepository;
 
     @Autowired
-    public UsersController(UsersRepository usersRepository) {
-        this.usersRepository = usersRepository;
+    public UserController(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     // GET all users
     @RequestMapping(method = RequestMethod.GET)
-    public List<Users> getAllUsers(){
-       return usersRepository.findAll();
+    public List<User> getAllUsers(){
+       return userRepository.findAll();
     }
 
     // GET a user by ID
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public Users getUserById(Integer id){
-        return usersRepository.getById(id);
+    public User getUserById(Integer id){
+        return userRepository.getById(id);
     }
 
     // POST a user
     @RequestMapping(method = RequestMethod.POST)
-    public void postUser(Users user){
-        usersRepository.save(user);
+    public void postUser(User user){
+        userRepository.save(user);
     }
 
     // DELETE a user by ID
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public void deleteUserById(Integer id){
-        usersRepository.deleteById(id);
+        userRepository.deleteById(id);
     }
 
 }
