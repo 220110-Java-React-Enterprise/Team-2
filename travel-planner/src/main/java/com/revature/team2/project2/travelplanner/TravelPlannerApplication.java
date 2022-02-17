@@ -2,8 +2,9 @@ package com.revature.team2.project2.travelplanner;
 
 import com.revature.team2.project2.travelplanner.beans.models.Admin;
 import com.revature.team2.project2.travelplanner.beans.models.Thing;
+import com.revature.team2.project2.travelplanner.beans.models.User;
 import com.revature.team2.project2.travelplanner.beans.repositories.AdminRepository;
-import com.revature.team2.project2.travelplanner.beans.repositories.UsersRepository;
+import com.revature.team2.project2.travelplanner.beans.repositories.UserRepository;
 import com.revature.team2.project2.travelplanner.beans.utils.ApplicationContextProvider;
 
 import org.springframework.boot.SpringApplication;
@@ -24,9 +25,10 @@ public class TravelPlannerApplication {
 		ApplicationContext context = ApplicationContextProvider.getApplicationContext();
 
 		AdminRepository adminRepository = context.getBean(AdminRepository.class);
-		UsersRepository usersRepository = context.getBean(UsersRepository.class);
+		UserRepository userRepository = context.getBean(UserRepository.class);
 
 		adminRepository.save(new Admin("jon", "gons", "jons", "pass"));
+		userRepository.save(new User("billy", "bob", "bobilly", "yllibob"));
 	}
 
 }
