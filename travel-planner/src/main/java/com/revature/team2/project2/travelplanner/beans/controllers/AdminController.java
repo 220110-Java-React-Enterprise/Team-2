@@ -3,9 +3,7 @@ package com.revature.team2.project2.travelplanner.beans.controllers;
 import com.revature.team2.project2.travelplanner.beans.models.Admin;
 import com.revature.team2.project2.travelplanner.beans.respositories.AdminRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,19 +28,19 @@ public class AdminController {
 
     // GET an administrator by ID
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public Admin getAdminById(Integer id){
+    public Admin getAdminById(@PathVariable Integer id){
         return adminRepository.getById(id);
     }
 
     // POST and administrator
     @RequestMapping(method = RequestMethod.POST)
-    public void postAdmin(Admin admin){
+    public void postAdmin(@RequestBody Admin admin){
         adminRepository.save(admin);
     }
 
     // DELETE an administrator by ID
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public void deleteAdminById(Integer id){
+    public void deleteAdminById(@PathVariable Integer id){
         adminRepository.deleteById(id);
     }
 }
