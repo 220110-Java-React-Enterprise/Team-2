@@ -2,6 +2,7 @@
 /*LEAST SPECIFIC*/
 body{
   background-color: #1A374D;
+  color: #B1D0E0;
   
 }
 h1 {
@@ -23,9 +24,7 @@ h5 {
 h6 {
     color: #6998AB;
 }
-body {
-    color: #B1D0E0;
-}
+
 button {
     background-color: #B1D0E0;
     border-color: none;
@@ -37,23 +36,26 @@ button {
     margin-bottom: 10px;
 }
 
-    img {
-        background-color: none;
-        margin-top: 30px;
-    }
+img {
+    background-color: none;
+    margin-top: 30px;
+}
+
+/* table, th, td, tr {
+    border: 1px solid #B1D0E0;
+} */
 
 
 /*************CLASS SELECTORS**************/
 /*NAMES CAN REPEAT, USE TO GROUP SIMILAR ELEMENTS TOGETHER*/
 
-    .parent-center {
-        position: relative;
-        margin-top: 10%;
+    .itin-table {
+       border: 1px solid #406882;
+       border-collapse: collapse;
+       height: 30px;
+       width: 500px;
     }
-    .child-center {
-        position: absolute;
-        margin-left: 37%;
-    }
+ 
 
 /*************ID SELECTOR***************/
 /*MOST SPECIFIC - OVERRIDES TAG AND CLASS SELECTORS*/
