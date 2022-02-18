@@ -28,14 +28,12 @@ phases:
     commands:
       # build Maven project to generate the WAR file
       # skip tests to avoid Spring's wrath
-      - cd travel-planner
       - mvn package -DskipTests
   
   post_build:
     commands:
       # move WAR into the main directory
       # name ROOT.war is associated with fix-path.config script
-      - cd travel-planner
       - mv target/travel-planner-1.0.war ROOT.war
   
 artifacts:
