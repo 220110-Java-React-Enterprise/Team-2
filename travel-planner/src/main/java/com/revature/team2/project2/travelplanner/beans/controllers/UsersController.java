@@ -6,7 +6,9 @@ import com.revature.team2.project2.travelplanner.beans.repositories.UsersReposit
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.nio.file.attribute.UserPrincipalNotFoundException;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Acts as a servlet for HTTP requests
@@ -29,8 +31,8 @@ public class UsersController {
 
     // GET a user by ID
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public Users getUserById(@PathVariable Integer id){
-        return usersRepository.getById(id);
+    public Optional<Users> getUserById (@PathVariable Integer id) throws UserPrincipalNotFoundException {
+        return usersRepository.findById(id);
     }
 
     // POST a user
