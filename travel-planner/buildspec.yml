@@ -15,6 +15,7 @@ phases:
 
       # retrieve .properties from bucket
       - aws s3 cp s3://atravelplanner-properties-bucket/application.properties src/main/resources/application.properties
+      #- aws s3 cp s3://atravelplanner-properties-bucket/api-key.properties src/main/resources/api-key.properties
 
       # more fact finding
       - ls -al
@@ -23,6 +24,7 @@ phases:
   build:
     commands:
       # build Maven project to generate the WAR file
+      # skip tests to avoid Spring's wrath
       - mvn package -DskipTests
   
   post_build:
