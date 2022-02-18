@@ -1,0 +1,38 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      # version of Java being used in project
+      java: corretto8
+  
+  pre_build:
+    commands:
+      # fact finding
+      - echo ======================================== PRE BUILD ========================================
+      - pwd
+      - ls -al
+
+      # retrieve .properties from bucket
+      - aws s3 cp s3://atravelplanner-properties-bucket/application.properties src/main/resources/application.properties
+
+      # more fact finding
+      - ls -al
+      - ls -al src/main/resources/
+  
+  build:
+    commands:
+      # build Maven project to generate the WAR file
+      - mvn package -DskipTests
+  
+  post_build:
+    commands:
+      # move WAR into the main directory
+      # name ROOT.war is associated with fix-path.config script
+      - mv target/travel-planner-1.0.war ROOT.war
+  
+artifacts:
+  # things to transmit to EBS for next step
+  files:
+    - ROOT.war
+    - .ebextensions/**/*

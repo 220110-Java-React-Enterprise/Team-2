@@ -12,10 +12,10 @@
 
 	<groupId>com.revature.team2.project2</groupId>
 	<artifactId>travel-planner</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<packaging>war</packaging>
 	<name>travel-planner</name>
-	<description>Travel Planner Spring Boot project</description>
+	<description>aTravelPlanner - a Spring Boot project</description>
 
 
 	<properties>
