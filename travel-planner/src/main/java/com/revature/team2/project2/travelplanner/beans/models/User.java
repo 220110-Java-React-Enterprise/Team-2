@@ -10,12 +10,12 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "admins")
-public class Admin {
+@Table(name = "users")
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "admin_id")
-    private Integer admin_id;
+    @Column(name = "user_id")
+    private Integer user_id;
 
     @Column(name = "first_name")
     private String firstName;
@@ -29,12 +29,12 @@ public class Admin {
     @Column(name = "password")
     private String password;
 
-    public Admin(String userName, String password) {
+    public User(String userName, String password) {
         this.userName = userName;
         this.password = password;
     }
 
-    public Admin(String firstName, String lastName, String userName, String password) {
+    public User(String firstName, String lastName, String userName, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;

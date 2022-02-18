@@ -4,17 +4,16 @@ import com.revature.team2.project2.travelplanner.beans.models.Admin;
 import com.revature.team2.project2.travelplanner.beans.repositories.AdminRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Acts as a servlet for HTTP requests
  */
 @RestController // @Response and @Controller are implied by @RestController
-@RequestMapping("/admin")
+@RequestMapping("/admins")
 public class AdminController {
     private final AdminRepository adminRepository;
 
@@ -31,19 +30,20 @@ public class AdminController {
 
     // GET an administrator by ID
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public Admin getAdminById(Integer id){
-        return adminRepository.getById(id);
+    public Optional<Admin> getAdminById(@PathVariable Integer id){
+
+        return adminRepository.findById(id);
     }
 
     // POST and administrator
     @RequestMapping(method = RequestMethod.POST)
-    public void postAdmin(Admin admin){
+    public void postAdmin(@RequestBody Admin admin){
         adminRepository.save(admin);
     }
 
     // DELETE an administrator by ID
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public void deleteAdminById(Integer id){
+    public void deleteAdminById(@PathVariable Integer id){
         adminRepository.deleteById(id);
     }
 }
