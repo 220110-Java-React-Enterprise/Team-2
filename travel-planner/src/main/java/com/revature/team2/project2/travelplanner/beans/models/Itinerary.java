@@ -11,19 +11,13 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Getter
 @Entity
-@Table(name ="itinerary")
+@Table(name ="itineraries")
 public class Itinerary {
 
     @Id
     @Column(name = "itinerary_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer itinerary_id;
-
-    @Column(name = "first_name")
-    private String firstName;
-
-    @Column(name = "last_name")
-    private String lastName;
 
     @Column(name = "destination")
     private String destination;
@@ -34,9 +28,7 @@ public class Itinerary {
     @Column(name = "travel_distance")
     private Integer travelDistance;
 
-    public Itinerary(String firstName, String lastName, String destination, String travelMode, Integer travelDistance) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Itinerary(String destination, String travelMode, Integer travelDistance) {
         this.destination = destination;
         this.travelMode = travelMode;
         this.travelDistance = travelDistance;
