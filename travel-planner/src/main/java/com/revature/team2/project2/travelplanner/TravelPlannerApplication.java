@@ -30,6 +30,12 @@ public class TravelPlannerApplication {
 		userRepository.save(new User("billy", "bob", "bobilly", "yllibob"));
 
 		itineraryRepository.save(new Itinerary("Joe", "Smith", "Marshall, TX", "Airplane",   1500));
+
+		User steve = new User("steve", "steve", "steve", "steve");
+		steve.addItinerary(itineraryRepository.getById(1));
+		userRepository.save(steve);
 	}
+
+}
 
 }

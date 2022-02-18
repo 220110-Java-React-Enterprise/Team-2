@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.LinkedList;
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -29,6 +32,10 @@ public class User {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "itineraries")
+    @OneToMany
+    private List<Itinerary> itineraries = new LinkedList<>();
+
     public User(String userName, String password) {
         this.userName = userName;
         this.password = password;
@@ -40,5 +47,15 @@ public class User {
         this.userName = userName;
         this.password = password;
     }
+
+
+    public void addItinerary(Itinerary itinerary) {
+        itineraries.add(itinerary);
+    }
+
+    public void removeItinerary(Itinerary itinerary) {
+        itineraries.remove(itinerary);
+    }
+
 
 }
