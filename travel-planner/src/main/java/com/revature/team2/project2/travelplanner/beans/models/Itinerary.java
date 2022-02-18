@@ -16,6 +16,9 @@ import javax.persistence.Table;
 @Table(name ="itinerary")
 public class Itinerary {
 
+    @Column(name = "itinerary_id")
+    private Integer itinerary_id;
+
     @Column(name = "first_name")
     private String firstName;
 
