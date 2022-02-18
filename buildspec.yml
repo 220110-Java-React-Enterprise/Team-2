@@ -3,8 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      # version of Java being used in project
-      java: corretto8
+      java: corretto11
   
   pre_build:
     commands:
@@ -12,6 +11,9 @@ phases:
       - echo ======================================== PRE BUILD ========================================
       - pwd
       - ls -al
+
+      # move down to actual project directory
+      - cd travel-planner
 
       # retrieve .properties from bucket
       - aws s3 cp s3://atravelplanner-properties-bucket/application.properties src/main/resources/application.properties
@@ -31,7 +33,8 @@ phases:
     commands:
       # move WAR into the main directory
       # name ROOT.war is associated with fix-path.config script
-      - mv target/travel-planner-1.0.war ROOT.war
+      - mv target/travel-planner-1.0.war ../ROOT.war
+      - cd ../
   
 artifacts:
   # things to transmit to EBS for next step
