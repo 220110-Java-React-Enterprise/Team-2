@@ -16,36 +16,48 @@
 
   <div>
     <h2>Currency</h2>
-    <table>
+    <form action="" method="post">
+      <table>
+        <tr>
+          <td><label for="original_currency">Original Currency:</label></td>
+          <td><input type="text" id="original_currency" name="original_currency" value=""></td>
+        </tr>
+  
+        <tr>
+          <td><label for="original_amount">Original Amount:</label></td>
+          <td><input type="number" id="original_amount" name="original_amount" value=""></td>
+        </tr>
+  
+        <tr>
+          <td><label for="target_currency">Target Currency:</label></td>
+          <td><input type="text" id="target_currency" name="target_currency" value=""></td>
+          <!---connect to API here to input currency types and amount and to output new amount-->
+        </tr>
+      </table>
+      <button>Calculate</button>
+    </form>
+    <!--OUTPUT-->
+    <form action="" method="get">
 
-      <tr>
-        <td><label for="original_currency">Original Currency:</label></td>
-        <td><input type="text" id="original_currency" name="original_currency" value=""></td>
-      </tr>
-
-      <tr>
-        <td><label for="original_amount">Original Amount:</label></td>
-        <td><input type="number" id="original_amount" name="original_amount" value=""></td>
-      </tr>
-
-      <tr>
-        <td><label for="target_currency">Target Currency:</label></td>
-        <td><input type="text" id="target_currency" name="target_currency" value=""></td>
-        <!---connect to API here to input currency types and amount and to output new amount-->
-      </tr>
-      
-    </table>
+    </form>
   </div>
 
   <div>
     <h2>Forecast</h2>
-    <table>
-      <tr>
-        <td><label for="city">City:</label></td>
-        <td><input type="text" id="city" name="city" value=""></td>
-        <!--need to connect to API here to get forecast-->
-      </tr>
-    </table>
+    <form action="" method="post">
+      <table>
+        <tr>
+          <td><label for="city">City:</label></td>
+          <td><input type="text" id="city" name="city" value=""></td>
+          <!--need to connect to API here to get forecast-->
+        </tr>
+      </table>
+      <button>Predict</button>
+    </form>
+    <!--OUTPUT-->
+    <form action="" method="get">
+      
+    </form>
   </div>
 
   <div>
@@ -78,6 +90,7 @@
       <tr class="itin-table">
         <th class="itin-table">Start</th>
         <th class="itin-table">Destination</th>
+        <th class="itin-table">Transportation</th>
         <th class="itin-table">Distance</th>
       </tr>
     </table>
@@ -85,8 +98,7 @@
   </div>
 
   <div>
-    <h2>Delete User Profile</h2>
-    <button><a href="../admin/delete.html">Delete Profile</a></button><br>
+    <h2>Delete User Profile <button><a href="../admin/delete.html">Delete Profile</a></button></h2>
   </div>
   
 </body>
