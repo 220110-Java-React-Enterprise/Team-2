@@ -14,7 +14,7 @@ phases:
       - ls -al
 
       # retrieve .properties from bucket
-      - aws s3 cp s3://atravelplanner-properties-bucket/application.properties src/main/resources/application.properties
+      - aws s3 cp s3://atravelplanner-properties-bucket/application.properties travel-planner/src/main/resources/application.properties
       #- aws s3 cp s3://atravelplanner-properties-bucket/api-key.properties src/main/resources/api-key.properties
 
       # more fact finding
