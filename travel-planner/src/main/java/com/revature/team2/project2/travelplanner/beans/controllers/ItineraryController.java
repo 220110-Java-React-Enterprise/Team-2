@@ -3,11 +3,10 @@ package com.revature.team2.project2.travelplanner.beans.controllers;
 import com.revature.team2.project2.travelplanner.beans.models.Itinerary;
 import com.revature.team2.project2.travelplanner.beans.repositories.ItineraryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 
 /**
@@ -24,20 +23,20 @@ public class ItineraryController {
     }
 
     // GET itinerary
-    @RequestMapping(method = RequestMethod.GET)
-    public List<Itinerary> getItinerary(){
-        return itineraryRepository.findAll();
+    @RequestMapping(value = "/{id}" ,method = RequestMethod.GET)
+    public Optional<Itinerary> getItineraryByID(@PathVariable Integer itinerary_id){
+        return itineraryRepository.findById(itinerary_id);
     }
 
     // POST itinerary
-    @RequestMapping(value = "/{id}", method = RequestMethod.POST)
-    public Itinerary postItinerary(Itinerary itinerary, Integer itinerary_id){
-        return itineraryRepository.getById(itinerary_id);
+    @RequestMapping(method = RequestMethod.POST)
+    public Itinerary postItinerary(@RequestBody Itinerary itinerary){
+        return itineraryRepository.save(itinerary);
     }
 
     // DELETE itinerary
     @RequestMapping(value = "/{id}" ,method = RequestMethod.DELETE)
-    public void deleteItineraryById(Integer intinerary_id){
+    public void deleteItineraryById(@PathVariable Integer intinerary_id){
         itineraryRepository.deleteById(intinerary_id);
     }
 }
