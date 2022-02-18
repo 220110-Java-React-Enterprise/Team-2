@@ -1,6 +1,7 @@
 package com.revature.team2.project2.travelplanner.beans.controllers;
 
 import com.revature.team2.project2.travelplanner.beans.models.Itinerary;
+import com.revature.team2.project2.travelplanner.beans.models.User;
 import com.revature.team2.project2.travelplanner.beans.repositories.ItineraryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -23,9 +24,15 @@ public class ItineraryController {
     }
 
     // GET itinerary
-    @RequestMapping(value = "/{id}" ,method = RequestMethod.GET)
-    public Optional<Itinerary> getItineraryByID(@PathVariable Integer itinerary_id){
-        return itineraryRepository.findById(itinerary_id);
+    @RequestMapping(method = RequestMethod.GET)
+    public List<Itinerary> getItinerary(){
+        return itineraryRepository.findAll();
+    }
+
+    // GET itinerary by Id
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public Optional<Itinerary> getItineraryByID(@PathVariable Integer id){
+        return itineraryRepository.findById(id);
     }
 
     // POST itinerary
@@ -36,7 +43,7 @@ public class ItineraryController {
 
     // DELETE itinerary
     @RequestMapping(value = "/{id}" ,method = RequestMethod.DELETE)
-    public void deleteItineraryById(@PathVariable Integer intinerary_id){
-        itineraryRepository.deleteById(intinerary_id);
+    public void deleteItineraryById(@PathVariable Integer id){
+        itineraryRepository.deleteById(id);
     }
 }

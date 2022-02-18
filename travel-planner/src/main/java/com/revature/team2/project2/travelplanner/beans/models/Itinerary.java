@@ -4,9 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 
 @Setter
@@ -16,7 +14,9 @@ import javax.persistence.Table;
 @Table(name ="itinerary")
 public class Itinerary {
 
+    @Id
     @Column(name = "itinerary_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer itinerary_id;
 
     @Column(name = "first_name")
