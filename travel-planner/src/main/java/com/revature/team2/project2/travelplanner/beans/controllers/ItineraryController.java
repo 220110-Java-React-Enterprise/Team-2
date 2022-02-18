@@ -1,7 +1,6 @@
 package com.revature.team2.project2.travelplanner.beans.controllers;
 
 import com.revature.team2.project2.travelplanner.beans.models.Itinerary;
-import com.revature.team2.project2.travelplanner.beans.models.User;
 import com.revature.team2.project2.travelplanner.beans.repositories.ItineraryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
