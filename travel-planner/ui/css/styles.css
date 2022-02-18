@@ -4,7 +4,7 @@ body{
   background-color: #1A374D;
 }
 h1 {
-    color: #406882;
+    color: #B1D0E0;
 }
 h2 {
     color: #406882;
@@ -24,19 +24,31 @@ h6 {
 body {
     color: #B1D0E0;
 }
-/*
+button {
+    background-color: #B1D0E0;
+    border-color: none;
+    color: black;
+    padding: 10px;
+    text-align: center;
+}
+
     img {
-        background-color: blue;
+        background-color: none;
+        margin-top: 30px;
     }
-*/
+
 
 /*************CLASS SELECTORS**************/
 /*NAMES CAN REPEAT, USE TO GROUP SIMILAR ELEMENTS TOGETHER*/
-/*
-    .class {
-        background-color: blue;
+
+    .parent-center {
+        position: relative;
+        margin-top: 10%;
     }
-*/
+    .child-center {
+        position: absolute;
+        margin-left: 40%;
+    }
 
 /*************ID SELECTOR***************/
 /*MOST SPECIFIC - OVERRIDES TAG AND CLASS SELECTORS*/
