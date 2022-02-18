@@ -11,7 +11,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Getter
 @Entity
-@Table(name ="itinerary")
+@Table(name ="itineraries")
 public class Itinerary {
 
     @Id
