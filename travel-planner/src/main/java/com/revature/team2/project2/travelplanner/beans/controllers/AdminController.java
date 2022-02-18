@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Acts as a servlet for HTTP requests
@@ -29,8 +30,9 @@ public class AdminController {
 
     // GET an administrator by ID
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public Admin getAdminById(@PathVariable Integer id){
-        return adminRepository.getById(id);
+    public Optional<Admin> getAdminById(@PathVariable Integer id){
+
+        return adminRepository.findById(id);
     }
 
     // POST and administrator

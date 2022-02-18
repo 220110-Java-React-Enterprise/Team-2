@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Acts as a servlet for HTTP requests
@@ -29,8 +30,9 @@ public class UserController {
 
     // GET a user by ID
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public User getUserById(@PathVariable Integer id){
-        return userRepository.getById(id);
+    public Optional<User> getUserById(@PathVariable Integer id){
+
+        return userRepository.findById(id);
     }
 
     // POST a user
