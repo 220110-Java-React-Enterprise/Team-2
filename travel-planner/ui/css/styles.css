@@ -1,0 +1,48 @@
+/*********TAG SELECTORS*****************/
+/*LEAST SPECIFIC*/
+body{
+  background-color: #1A374D;
+}
+h1 {
+    color: #406882;
+}
+h2 {
+    color: #406882;
+}
+h3 {
+    color: #406882;
+}
+h4 {
+    color: #6998AB;
+}
+h5 {
+    color: #6998AB;
+}
+h6 {
+    color: #6998AB;
+}
+body {
+    color: #B1D0E0;
+}
+/*
+    img {
+        background-color: blue;
+    }
+*/
+
+/*************CLASS SELECTORS**************/
+/*NAMES CAN REPEAT, USE TO GROUP SIMILAR ELEMENTS TOGETHER*/
+/*
+    .class {
+        background-color: blue;
+    }
+*/
+
+/*************ID SELECTOR***************/
+/*MOST SPECIFIC - OVERRIDES TAG AND CLASS SELECTORS*/
+/*ID NAMES MUST BE UNIQUE, ONLY APPEARS ONCE ON A PAGE*/
+/*
+    #id {
+        color: green;
+    }
+*/
