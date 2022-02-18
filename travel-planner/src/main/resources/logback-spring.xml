@@ -13,7 +13,7 @@
         </encoder>
 
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>TravelPlanner-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <fileNamePattern>./travel-planner/logs/TravelPlanner-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <maxFileSize>1MB</maxFileSize>
             <maxHistory>10</maxHistory>
             <totalSizeCap>10MB</totalSizeCap>
