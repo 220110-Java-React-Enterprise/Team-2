@@ -33,9 +33,9 @@ table {
 }
 
 button {
-    background-color: #B1D0E0;
+    background-color: #406882;
     border-color: none;
-    color: #1A374D;
+    color: #B1D0E0;
     padding: 10px;
     text-align: center;
     height: 40px;
@@ -45,7 +45,7 @@ button {
 }
 
 input {
-    background-color:#B1D0E0;
+    background-color:#6998AB;
     color: #1A374D;
 }
 
@@ -90,3 +90,8 @@ th.itin-table, td.itin-table {
         color: green;
     }
 */
+
+/*****************LINK SELECTORS****************/
+a:visited {
+    color:#B1D0E0;
+}
