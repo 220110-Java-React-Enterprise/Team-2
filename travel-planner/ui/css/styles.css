@@ -3,6 +3,7 @@
 body{
   background-color: #1A374D;
   color: #B1D0E0;
+  text-align: center;
   
 }
 h1 {
@@ -26,6 +27,10 @@ h5 {
 h6 {
     color: #6998AB;
 }
+table {
+    text-align: center;
+    
+}
 
 button {
     background-color: #B1D0E0;
@@ -36,6 +41,12 @@ button {
     height: 40px;
     width: 150px;
     margin-bottom: 10px;
+    margin-top: 1%;
+}
+
+input {
+    background-color:#B1D0E0;
+    color: #1A374D;
 }
 
 img {
@@ -43,23 +54,32 @@ img {
     margin-top: 30px;
 }
 tr {
-    text-align: center;
+    text-align: left;
 }
-
-/* table, th, td, tr {
-    border: 1px solid #B1D0E0;
-} */
-
 
 /*************CLASS SELECTORS**************/
 /*NAMES CAN REPEAT, USE TO GROUP SIMILAR ELEMENTS TOGETHER*/
+table.itin-table {
+    margin-left: 15%;
+    width: 70%;
+    margin-right: 15%;
+}
+th.itin-table, td.itin-table {
+    width: 25%;
+    text-align: center;
+}
+.itin-table {
+    border: 1px solid #406882;
+    border-collapse: collapse;
+    height: 30px;
+}
 
-    .itin-table {
-       border: 1px solid #406882;
-       border-collapse: collapse;
-       height: 30px;
-       width: 500px;
-    }
+.log-in-table {
+    margin-left: 40%;
+    width: 20%;
+    margin-right: 40%;
+}
+
  
 
 /*************ID SELECTOR***************/

@@ -9,16 +9,16 @@
   <link rel="icon" href="../favicon1.ico?v=2">
 </head>
 
-<h1 style="margin-top: 1%; margin-left: 42%;">User Page</h1>
+<h1 style="margin-top: 1%;">User Page</h1>
 <!--replace User with first_name's of logged in user-->
 
 <body>
   
 
-  <div style="margin-left: 1%;">
-    <h3 style="margin-left: 7%;">Currency</h3>
+  <div >
+    <h3 >Currency</h3>
     <form action="" method="post">
-      <table>
+      <table style="margin-left: 35%; width: 30%; margin-right: 35%;">
         <tr>
           <td><label for="original_currency">Original Currency:</label></td>
           <td><input type="text" id="original_currency" name="original_currency" value=""></td>
@@ -35,7 +35,7 @@
           <!---connect to API here to input currency types and amount and to output new amount-->
         </tr>
       </table>
-      <button style="margin-left: 6%; margin-top: 1%;">Calculate</button>
+      <button style="margin-top: 1%;">Calculate</button>
     </form>
     <!--OUTPUT-->
     <form action="" method="get">
@@ -43,17 +43,17 @@
     </form>
   </div>
 
-  <div>
-    <h3 >Forecast</h3>
+  <div style="margin-left: 1%;">
+    <h3>Forecast</h3>
     <form action="" method="post">
-      <table>
+      <table style="margin-left: 40%; width: 20%; margin-right: 40%;">
         <tr>
           <td><label for="city">City:</label></td>
           <td><input type="text" id="city" name="city" value=""></td>
           <!--need to connect to API here to get forecast-->
         </tr>
       </table>
-      <button>Predict</button>
+      <button style="margin-top: 1%;">Predict</button>
     </form>
 
     <!--OUTPUT-->
@@ -63,9 +63,9 @@
   </div>
 
   <div>
-    <h3>Itinerary:</h3>
+    <h3>Itinerary</h3>
     <form action="" method="post"> <!---action is the URL where the info will be sent to -->
-      <table>
+      <table style="margin-left: 30%; width: 35%; margin-right: 30%;">
         <tr>
           <td><label for="strating_point">Where are you starting your trip?</label></td>
           <td><input type="text" id="strating_point" name="strating_point" value=""></td>
@@ -88,14 +88,16 @@
 
   <div>
     
-    <table class="itin-table">
-      <tr class="itin-table">
-        <th class="itin-table">Start</th>
-        <th class="itin-table">Destination</th>
-        <th class="itin-table">Transportation</th>
-        <th class="itin-table">Distance</th>
-      </tr>
-    </table>
+    <form action="" method="get">
+      <table class="itin-table">
+        <tr class="itin-table">
+          <th class="itin-table">Start</th>
+          <th class="itin-table">Destination</th>
+          <th class="itin-table">Transportation</th>
+          <th class="itin-table">Distance</th>
+        </tr>
+      </table>
+    </form>
 
   </div>
 
