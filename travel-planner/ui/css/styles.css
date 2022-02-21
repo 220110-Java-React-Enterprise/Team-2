@@ -1,0 +1,72 @@
+/*********TAG SELECTORS*****************/
+/*LEAST SPECIFIC*/
+body{
+  background-color: #1A374D;
+  color: #B1D0E0;
+  
+}
+h1 {
+    color: #B1D0E0;
+    font-size: 50px;
+}
+h2 {
+    color: #406882;
+    
+}
+h3 {
+    color: #406882;
+    font-size: 30px;
+}
+h4 {
+    color: #6998AB;
+}
+h5 {
+    color: #6998AB;
+}
+h6 {
+    color: #6998AB;
+}
+
+button {
+    background-color: #B1D0E0;
+    border-color: none;
+    color: #1A374D;
+    padding: 10px;
+    text-align: center;
+    height: 40px;
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+img {
+    background-color: none;
+    margin-top: 30px;
+}
+tr {
+    text-align: center;
+}
+
+/* table, th, td, tr {
+    border: 1px solid #B1D0E0;
+} */
+
+
+/*************CLASS SELECTORS**************/
+/*NAMES CAN REPEAT, USE TO GROUP SIMILAR ELEMENTS TOGETHER*/
+
+    .itin-table {
+       border: 1px solid #406882;
+       border-collapse: collapse;
+       height: 30px;
+       width: 500px;
+    }
+ 
+
+/*************ID SELECTOR***************/
+/*MOST SPECIFIC - OVERRIDES TAG AND CLASS SELECTORS*/
+/*ID NAMES MUST BE UNIQUE, ONLY APPEARS ONCE ON A PAGE*/
+/*
+    #id {
+        color: green;
+    }
+*/

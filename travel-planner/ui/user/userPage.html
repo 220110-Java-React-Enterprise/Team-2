@@ -1,42 +1,107 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <h1>User Page</h1>
-  <!--replace User with first_name's of logged in user-->
-  <body>
-    <p>Itinerary:<br />
-        <label for="strating_point">Where are you starting your trip?</label>
-        <input type="text" id="strating_point" name="strating_point" value="">
-        <button>Add</button><br/>
-        <!--add to table-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Page</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" href="../favicon1.ico?v=2">
+</head>
 
-        <label for="destination">Add destination</label>
-        <input type="text" id="destination" name="destination" value="">
-        <button>Add</button><br/>
-        <!--add destination to table-->
+<h1 style="margin-top: 1%; margin-left: 42%;">User Page</h1>
+<!--replace User with first_name's of logged in user-->
 
-        <label for="travel_method">How are you getting there?</label>
-        <input type="text" id="travel_method" name="travel_method" value="">
-        <button>Add</button><br/>
-        <!--add method to table-->
-        <!--calculate and display distance-->
-        <!--calculate total distance traveled during trip-->
+<body>
+  
 
-        <table>
-          <tr>
-            <th>Start</th>
-            <th>Destination</th>
-            <th>Distance</th>
-          </tr>
-        </table>
-    </p>
+  <div style="margin-left: 1%;">
+    <h3 style="margin-left: 7%;">Currency</h3>
+    <form action="" method="post">
+      <table>
+        <tr>
+          <td><label for="original_currency">Original Currency:</label></td>
+          <td><input type="text" id="original_currency" name="original_currency" value=""></td>
+        </tr>
+  
+        <tr>
+          <td><label for="original_amount">Original Amount:</label></td>
+          <td><input type="number" id="original_amount" name="original_amount" value=""></td>
+        </tr>
+  
+        <tr>
+          <td><label for="target_currency">Target Currency:</label></td>
+          <td><input type="text" id="target_currency" name="target_currency" value=""></td>
+          <!---connect to API here to input currency types and amount and to output new amount-->
+        </tr>
+      </table>
+      <button style="margin-left: 6%; margin-top: 1%;">Calculate</button>
+    </form>
+    <!--OUTPUT-->
+    <form action="" method="get">
 
-    <p>Delete User Profile
-      <!-- .. in directory name means move up to parent dir then find next one-->
-      <button><a href="../admin/delete.html">Delete Profile</a></button><br>
-    </p>
-  </body>
+    </form>
+  </div>
+
+  <div>
+    <h3 >Forecast</h3>
+    <form action="" method="post">
+      <table>
+        <tr>
+          <td><label for="city">City:</label></td>
+          <td><input type="text" id="city" name="city" value=""></td>
+          <!--need to connect to API here to get forecast-->
+        </tr>
+      </table>
+      <button>Predict</button>
+    </form>
+
+    <!--OUTPUT-->
+    <form action="" method="get">
+      
+    </form>
+  </div>
+
+  <div>
+    <h3>Itinerary:</h3>
+    <form action="" method="post"> <!---action is the URL where the info will be sent to -->
+      <table>
+        <tr>
+          <td><label for="strating_point">Where are you starting your trip?</label></td>
+          <td><input type="text" id="strating_point" name="strating_point" value=""></td>
+        </tr>
+        <tr>
+          <td><label for="destination">Add destination</label></td>
+          <td><input type="text" id="destination" name="destination" value=""></td>
+        </tr>
+        <tr>
+          <td><label for="travel_method">How are you getting there?</label></td>
+          <td><input type="text" id="travel_method" name="travel_method" value=""></td>
+        </tr>
+      </table>
+      <button>Add</button><br />
+      <!--add method to table-->
+      <!--calculate and display distance-->
+      <!--calculate total distance traveled during trip-->
+    </form>
+  </div>
+
+  <div>
+    
+    <table class="itin-table">
+      <tr class="itin-table">
+        <th class="itin-table">Start</th>
+        <th class="itin-table">Destination</th>
+        <th class="itin-table">Transportation</th>
+        <th class="itin-table">Distance</th>
+      </tr>
+    </table>
+
+  </div>
+
+  <div>
+    <h3>Delete User Profile <button><a href="../admin/delete.html">Delete Profile</a></button></h3>
+  </div>
+  
+</body>
 </html>
