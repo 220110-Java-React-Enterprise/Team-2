@@ -17,6 +17,8 @@ import okhttp3.Response;
 @RestController
 @RequestMapping("/api")
 @Slf4j
+//TODO parse API request parameters from user
+//TODO geocoding API for cities -> lat/lon?
 public class ApiController {
     private String keyNinja;
     private String keyWeather;
