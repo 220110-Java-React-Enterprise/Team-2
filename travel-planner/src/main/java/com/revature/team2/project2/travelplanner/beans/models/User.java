@@ -1,5 +1,8 @@
 package com.revature.team2.project2.travelplanner.beans.models;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import javax.persistence.*;
 
 import lombok.Getter;
@@ -48,7 +51,6 @@ public class User {
         this.password = password;
     }
 
-
     public void addItinerary(Itinerary itinerary) {
         itineraries.add(itinerary);
     }
@@ -56,6 +58,5 @@ public class User {
     public void removeItinerary(Itinerary itinerary) {
         itineraries.remove(itinerary);
     }
-
 
 }

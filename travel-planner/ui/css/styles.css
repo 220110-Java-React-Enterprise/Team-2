@@ -1,0 +1,101 @@
+/*********TAG SELECTORS*****************/
+/*LEAST SPECIFIC*/
+body{
+  background-color: #1A374D;
+  color: #B1D0E0;
+  text-align: center;
+  
+}
+h1 {
+    color: #B1D0E0;
+    font-size: 50px;
+}
+h2 {
+    color: #406882;
+    
+}
+h3 {
+    color: #406882;
+    font-size: 30px;
+}
+h4 {
+    color: #6998AB;
+}
+h5 {
+    color: #6998AB;
+}
+h6 {
+    color: #6998AB;
+}
+table {
+    text-align: center;
+    
+}
+
+button {
+    background-color: #406882;
+    border-color: none;
+    color: #B1D0E0;
+    padding: 10px;
+    text-align: center;
+    height: 40px;
+    width: 150px;
+    margin-bottom: 10px;
+    margin-top: 1%;
+}
+
+input {
+    background-color:#6998AB;
+    color: #1A374D;
+}
+
+img {
+    background-color: none;
+    margin-top: 30px;
+}
+tr {
+    text-align: left;
+}
+
+/*************CLASS SELECTORS**************/
+/*NAMES CAN REPEAT, USE TO GROUP SIMILAR ELEMENTS TOGETHER*/
+table.itin-table {
+    margin-left: 15%;
+    width: 70%;
+    margin-right: 15%;
+}
+th.itin-table, td.itin-table {
+    width: 25%;
+    text-align: center;
+}
+.itin-table {
+    border: 1px solid #406882;
+    border-collapse: collapse;
+    height: 30px;
+}
+
+.log-in-table {
+    margin-left: 40%;
+    width: 20%;
+    margin-right: 40%;
+}
+
+.admin-button {
+    width: 200px;
+}
+
+ 
+
+/*************ID SELECTOR***************/
+/*MOST SPECIFIC - OVERRIDES TAG AND CLASS SELECTORS*/
+/*ID NAMES MUST BE UNIQUE, ONLY APPEARS ONCE ON A PAGE*/
+/*
+    #id {
+        color: green;
+    }
+*/
+
+/*****************LINK SELECTORS****************/
+a:visited, a:link {
+    color:#B1D0E0;
+}

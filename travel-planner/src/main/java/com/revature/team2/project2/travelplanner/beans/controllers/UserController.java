@@ -15,7 +15,7 @@ import java.util.Optional;
 @RestController // @Response and @Controller are implied by @RestController
 @RequestMapping("/users")
 public class UserController {
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     @Autowired
     public UserController(UserRepository userRepository) {

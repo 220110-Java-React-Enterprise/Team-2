@@ -3,12 +3,27 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" href="../favicon1.ico?v=2">
   </head>
   <body>
-    <label for="delete_confirm">Are you sure you want to delete your planner profile?<br>
-    All your info will be lost.</label><br>
-    <button>Yes</button>
-    <button>No</button>
-    <!--Link yes and no buttons with DELETE user from DB functions-->
+    <h1>Delete User Profile</h1>
+
+    <form action="" method="delete">
+      <!-- not sure delete is right, might be get? -->
+      <table style="margin-left: 40%; margin-right: 40%; width: 20%;">
+        <tr>
+          <td><label for="user_id">User ID</label></td>
+          <td><input type="number" name="user_id" id="user_id" value=""></td>
+        </tr>
+      </table>
+
+      <div>
+        <button type="submit">Delete</button>
+      </div>
+
+    </form>
+    
+    
   </body>
 </html>
