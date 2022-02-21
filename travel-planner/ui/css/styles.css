@@ -80,6 +80,10 @@ th.itin-table, td.itin-table {
     margin-right: 40%;
 }
 
+.admin-button {
+    width: 200px;
+}
+
  
 
 /*************ID SELECTOR***************/
@@ -92,6 +96,6 @@ th.itin-table, td.itin-table {
 */
 
 /*****************LINK SELECTORS****************/
-a:visited {
+a:visited, a:link {
     color:#B1D0E0;
 }
