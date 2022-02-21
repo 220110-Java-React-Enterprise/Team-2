@@ -29,7 +29,7 @@ public class TravelPlannerApplication {
 		adminRepository.save(new Admin("jon", "gons", "jons", "pass"));
 
 		userRepository.save(new User("billy", "bob", "bobilly", "yllibob"));
-
+    
 		itineraryRepository.save(new Itinerary("Marshall, TX", "Airplane", 1500));
 
 		User steve = new User("steve", "steve", "steve", "steve");
@@ -38,3 +38,5 @@ public class TravelPlannerApplication {
 	}
 
 }
+
+
