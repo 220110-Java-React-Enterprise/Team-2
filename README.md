@@ -27,6 +27,8 @@ Have you been wasting time with expensive travel agents? Or maybe you've found y
   - [ ] Documentation (all classes and methods have adequate Javadoc comments)
   - [ ] All Exceptions are caught and logged
   - [ ] Data useful to the application is retrieved from a third party API
+    - [ ] [API Ninjas - Currency Converter](https://api-ninjas.com/api/convertcurrency)
+    - [ ] [OpenWeatherMap - Weather](https://openweathermap.org/)
   - [ ] DevOps CI/CD pipeline is used to build and deploy project to a publicly available remote location
 
 
@@ -51,5 +53,4 @@ We employed the following technologies in our project.
   - Alvin Frierson - backend
   - Daniel Gordon - backend
   - Maja Wirkijowska - frontend
-  - Mahmood Sardari - DevOps, frontend
   - Cody Gonsowski - DevOps, backend

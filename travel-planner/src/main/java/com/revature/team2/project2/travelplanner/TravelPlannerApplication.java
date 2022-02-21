@@ -28,13 +28,15 @@ public class TravelPlannerApplication {
 
 		adminRepository.save(new Admin("jon", "gons", "jons", "pass"));
 
-		userRepository.save(new User("billy", "bob", "bobilly", "yllibob"));
+		userRepository.save(new User("billy", "bob", "bobilly@billy.bob", "bobilly", "yllibob"));
     
 		itineraryRepository.save(new Itinerary("Marshall, TX", "Airplane", 1500));
 
-		User steve = new User("steve", "steve", "steve", "steve");
+		User steve = new User("steve", "steve", "steve@steve.steve", "steve", "steve");
 		steve.addItinerary(itineraryRepository.getById(1));
 		userRepository.save(steve);
 	}
 
 }
+
+
