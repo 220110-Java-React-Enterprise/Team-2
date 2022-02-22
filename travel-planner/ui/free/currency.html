@@ -34,20 +34,20 @@
   <div>
 
     <h3 >Currency Exchange Calculator</h3>
-    <form action="../api/convert" method="post">
+    <form action="../../../api/convert" method="get">
       <table style="margin-left: 35%; width: 30%; margin-right: 35%;">
         <tr>
-          <td><label for="old_currency">Original Currency:</label></td>
+          <td><label for="have">Original Currency:</label></td>
           <td><input type="text" id="have" name="have" value=""></td>
         </tr>
   
         <tr>
-          <td><label for="old_amount">Original Amount:</label></td>
-          <td><input type="number" id="old_amount" name="old_amount" value=""></td>
+          <td><label for="amount">Original Amount:</label></td>
+          <td><input type="number" id="amount" name="amount" value=""></td>
         </tr>
   
         <tr>
-          <td><label for="new_currency">Target Currency:</label></td>
+          <td><label for="want">Target Currency:</label></td>
           <td><input type="text" id="want" name="want" value=""></td>
           <!---connect to API here to input currency types and amount and to output new amount-->
         </tr>
