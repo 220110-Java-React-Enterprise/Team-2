@@ -11,6 +11,7 @@ import com.revature.team2.project2.travelplanner.beans.models.Currency;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.extern.slf4j.Slf4j;
@@ -22,8 +23,6 @@ import okhttp3.ResponseBody;
 @RestController
 @RequestMapping("/api")
 @Slf4j
-// TODO parse API request parameters from user
-// TODO geocoding API for cities -> lat/lon?
 public class ApiController {
     private String keyNinja;
     private String keyWeather;
@@ -32,7 +31,7 @@ public class ApiController {
      * GET request for the Currency Converter API.
      */
     @GetMapping(value = "/convert", produces = { MediaType.APPLICATION_JSON_VALUE })
-    public Double convertRequest() {
+    public Double convertRequest(@RequestParam String want, @RequestParam String have, @RequestParam String amount) {
         // thing to return
         Double new_amount = null;
 
@@ -42,7 +41,7 @@ public class ApiController {
 
             // the request information
             Request request = new Request.Builder()
-                    .url("https://api.api-ninjas.com/v1/convertcurrency?want=EUR&have=USD&amount=5000")
+                    .url(String.format("https://api.api-ninjas.com/v1/convertcurrency?want=%s&have=%s&amount=%s", want, have, amount))
                     .get()
                     .addHeader("x-api-key", keyNinja)
                     .build();
@@ -70,6 +69,8 @@ public class ApiController {
     /**
      * GET request for the Weather API.
      */
+    // TODO parse request parameters from user
+    // TODO geocoding API for cities -> lat/lon?
     @GetMapping(value = "/weather", produces = { MediaType.APPLICATION_JSON_VALUE })
     public void weatherRequest() {
         try {
