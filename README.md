@@ -29,12 +29,14 @@ Have you been wasting time with expensive travel agents? Or maybe you've found y
   - [ ] Data useful to the application is retrieved from a third party API
     - [ ] [API Ninjas - Currency Converter](https://api-ninjas.com/api/convertcurrency)
     - [ ] [OpenWeatherMap - Weather](https://openweathermap.org/)
-  - [ ] DevOps CI/CD pipeline is used to build and deploy project to a publicly available remote location
+  - [ ] Server is hosted on AWS
+
 
 
 ### Bonus Features
   - [ ] Unit test coverage of service-layer classes
   - [ ] Basic (cypher) or advanced (shashed) encryption for secure data in HTTP exchanges
+  - [ ] DevOps CI/CD pipeline is used to build and deploy project to a publicly available remote location
 
 
 ## Tech Stack
