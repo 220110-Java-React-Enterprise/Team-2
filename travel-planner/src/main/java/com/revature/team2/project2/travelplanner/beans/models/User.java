@@ -26,6 +26,9 @@ public class User {
     @Column(name = "last_name")
     private String lastName;
 
+    @Column(name = "email")
+    private String email;
+
     @Column(name = "user_name")
     private String userName;
 
@@ -41,9 +44,10 @@ public class User {
         this.password = password;
     }
 
-    public User(String firstName, String lastName, String userName, String password) {
+    public User(String firstName, String lastName, String email, String userName, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.email = email;
         this.userName = userName;
         this.password = password;
     }
@@ -55,4 +59,5 @@ public class User {
     public void removeItinerary(Itinerary itinerary) {
         itineraries.remove(itinerary);
     }
+
 }
