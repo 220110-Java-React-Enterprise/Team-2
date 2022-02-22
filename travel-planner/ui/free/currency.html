@@ -7,46 +7,65 @@
   <link rel="stylesheet" href="../css/styles.css">
     <link rel="icon" href="../favicon1.ico?v=2">
   <title>Currency Calculator</title>
+
+  <script>
+    async function asyncFunc() {
+      let url = ""
+      let response = await fetch(url, {
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        }
+      });
+      try {
+        let result = await response.json();
+        console.log(result);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    asyncFunc();
+
+  </script>
+
 </head>
 <body>
 
   <div>
 
     <h3 >Currency Exchange Calculator</h3>
-    <form action="" method="post">
+    <form action="../api/convert" method="post">
       <table style="margin-left: 35%; width: 30%; margin-right: 35%;">
         <tr>
-          <td><label for="original_currency">Original Currency:</label></td>
-          <td><input type="text" id="original_currency" name="original_currency" value=""></td>
+          <td><label for="old_currency">Original Currency:</label></td>
+          <td><input type="text" id="have" name="have" value=""></td>
         </tr>
   
         <tr>
-          <td><label for="original_amount">Original Amount:</label></td>
-          <td><input type="number" id="original_amount" name="original_amount" value=""></td>
+          <td><label for="old_amount">Original Amount:</label></td>
+          <td><input type="number" id="old_amount" name="old_amount" value=""></td>
         </tr>
   
         <tr>
-          <td><label for="target_currency">Target Currency:</label></td>
-          <td><input type="text" id="target_currency" name="target_currency" value=""></td>
+          <td><label for="new_currency">Target Currency:</label></td>
+          <td><input type="text" id="want" name="want" value=""></td>
           <!---connect to API here to input currency types and amount and to output new amount-->
         </tr>
-      </table>
-      <button style="margin-top: 2%; margin-bottom: 2%;">Calculate</button>
-    </form>
 
-    <form action="" method="get">
-      <table style="margin-left: 35%; width: 30%; margin-right: 35%;">
         <tr>
-          <td><label for="target_amount">Target Currency Amount:</label></td>
-          <td>Output here</td>
+          <td><label for="new_amount">Target Currency Amount:</label></td>
+          <td><output name="new_amount" for="have old_amount want"></output></td>
         </tr>
+
       </table>
+      <button type="submit" value="submit" style="margin-top: 2%; margin-bottom: 2%;">Calculate</button>
     </form>
-  </div>
 
   <div>
     <h3>Return to Home Page?  <button><a href="../index.html">Home</a></button></h3>
   </div>
+
+  
   
 </body>
 </html>
