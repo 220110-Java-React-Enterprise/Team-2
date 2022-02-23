@@ -12,10 +12,7 @@ import com.revature.team2.project2.travelplanner.beans.models.Geo;
 import com.revature.team2.project2.travelplanner.beans.models.Weather;
 
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.OkHttpClient;
