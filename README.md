@@ -3,40 +3,41 @@ Have you been wasting time with expensive travel agents? Or maybe you've found y
 
 
 ## User Stories
-  - [ ] As a guest, I can view exchange rate between two locations.
-  - [ ] As a guest, I can view weather at a given travel location.
-  - [ ] As a user, I can register and login to an account.
+  - [x] As a guest, I can view exchange rate between two currencies.
+  - [x] As a guest, I can view weather about a travel location.
+  - [ ] As a guest, I can register for an account.
+  - [ ] As a user, I can login to an account.
   - [ ] As a user, I can delete my account.
+  - [ ] As a user, I can use more feature-rich versions of guest features.
   - [ ] As a user, I can save an itinerary.
-  - [ ] As an admin, I can access any user account.
-  - [ ] As an admin, I can reset a user account password.
-  - [ ] As an admin, I can delete a user account.
 
 
 ### Bonus Stories
   - [ ] As a user, I can get alerts about situations in areas I would travel to, like disease outbreaks.
   - [ ] As a user, I can see recommendations about restaurants and other businesses in the area.
+  - [ ] As an admin, I can access any user account.
+  - [ ] As an admin, I can reset a user account password.
+  - [ ] As an admin, I can delete a user account.
 
 
 ## Minimum Requirements
-  - [ ] Proper use of OOP principles and a well layered application structure
-  - [ ] Users are interfacing with a basic UI built with HTML, CSS, and JavaScript running in a browser
-  - [ ] CRUD operations are supported for one or more domain objects via the web application's API endpoints
-  - [ ] Client/Server communication is done with JSON in HTTP request and response bodies.
-  - [ ] All low-level persistence logic is abstracted away with Hibernate/Spring Data
+  - [x] Proper use of OOP principles and a well layered application structure
+  - [x] Users are interfacing with a basic UI built with HTML, CSS, and JavaScript running in a browser
+  - [x] CRUD operations are supported for one or more domain objects via the web application's API endpoints
+  - [x] Client/Server communication is done with JSON in HTTP request and response bodies
+  - [x] All low-level persistence logic is abstracted away with Hibernate/Spring Data
   - [ ] Documentation (all classes and methods have adequate Javadoc comments)
   - [ ] All Exceptions are caught and logged
-  - [ ] Data useful to the application is retrieved from a third party API
-    - [ ] [API Ninjas - Currency Converter](https://api-ninjas.com/api/convertcurrency)
-    - [ ] [OpenWeatherMap - Weather](https://openweathermap.org/)
-  - [ ] Server is hosted on AWS
-
+  - [x] Data useful to the application is retrieved from a third party API
+    - [x] [API Ninjas - Currency Converter](https://api-ninjas.com/api/convertcurrency)
+    - [x] [OpenWeatherMap - Weather](https://openweathermap.org/)
+  - [x] Server is hosted on AWS
 
 
 ### Bonus Features
   - [ ] Unit test coverage of service-layer classes
   - [ ] Basic (cypher) or advanced (shashed) encryption for secure data in HTTP exchanges
-  - [ ] DevOps CI/CD pipeline is used to build and deploy project to a publicly available remote location
+  - [x] DevOps CI/CD pipeline is used to build and deploy project to a publicly available remote location
 
 
 ## Tech Stack
