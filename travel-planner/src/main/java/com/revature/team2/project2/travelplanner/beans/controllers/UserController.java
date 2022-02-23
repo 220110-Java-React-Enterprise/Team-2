@@ -1,13 +1,18 @@
 package com.revature.team2.project2.travelplanner.beans.controllers;
 
-import com.revature.team2.project2.travelplanner.beans.models.User;
-import com.revature.team2.project2.travelplanner.beans.repositories.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import com.revature.team2.project2.travelplanner.beans.models.User;
+import com.revature.team2.project2.travelplanner.beans.repositories.UserRepository;
+
+import java.sql.DatabaseMetaData;
+import java.sql.ResultSet;
 import java.util.List;
 import java.util.Optional;
+
+import javax.sql.DataSource;
 
 /**
  * Acts as a servlet for HTTP requests
@@ -46,6 +51,9 @@ public class UserController {
     public void deleteUserById(@PathVariable Integer id){
         userRepository.deleteById(id);
     }
+    
+    
+
 
 
 }
