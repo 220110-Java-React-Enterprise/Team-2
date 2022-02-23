@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="icon" href="../favicon1.ico?v=2">
   <title>Currency Calculator</title>
+  
 
 
 </head>
@@ -17,74 +18,36 @@
   <div>
 
     <h3>Currency Exchange Calculator</h3>
-    <form  id="form1" onsubmit="asyncFunc()">
-      <table style="margin-left: 35%; width: 30%; margin-right: 35%;">
-        <tr>
-          <td><label for="have">Original Currency:</label></td>
-          <td><input type="text" id="have" name="have" value=""></td>
-        </tr>
 
-        <tr>
-          <td><label for="amount">Original Amount:</label></td>
-          <td><input type="number" id="amount" name="amount" value=""></td>
-        </tr>
+    <form id="form1" method="get" onsubmit="getNewAmount()">
+     
+          <label for="have">Original Currency:</label>
+          <input required type="text" id="have" name="have" ><br>
+        
 
-        <tr>
-          <td><label for="want">Target Currency:</label></td>
-          <td><input type="text" id="want" name="want" value=""></td>
-          <!---connect to API here to input currency types and amount and to output new amount-->
-        </tr>
+        <label for="amount">Original Amount:</label>
+        <input required type="number" id="amount" name="amount" value=""><br>
+        
 
-        <tr>
-          <td><label for="new_amount">Target Currency Amount:</label></td>
-          <td><output name = "form1"></output></td>
-        </tr>
+        
+        <label for="want">Target Currency:</label>
+        <input required type="text" id="want" name="want" value=""><br>
 
-      </table>
-      <button type="submit" value="submit" style="margin-top: 2%; margin-bottom: 2%;">Calculate</button>
+        
+      <button id="calcButton" type="submit" value="submit" style="margin-top: 2%; margin-bottom: 2%;">Calculate</button>
 
-             <h4>Target Currency Amount:</h4>
     </form>
+
+    <div id = "result">
+        <label id="new_amount" for="new_amount">Target Currency Amount:</label>
+        
+    </div>
 
     <div>
       <h3>Return to Home Page? <button><a href="../index.html">Home</a></button></h3>
     </div>
 
- <!-- THIS IS WHERE WE ARE - METHOD GETS CALLED BUT CONSOLE GETS CLEARED, TRYING TO SUBMIT 
-  FORM DATA TO JAVASCRIPT-->
-  <script>
-         async function asyncFunc(){
-           const myForm = document.getElementById("form1");
-           myForm.addEventListener('submit', function(e){
-             e.preventDefault();
-
-             const formData = new FormData(this);
-             const params = new URLSearchParams();
-             const url = "http://localhost:8080/api/convert"
-
-             for(const pair of formData){
-               params.append(pair[0], pair[1]);
-             }
-             console.log(params);
-             fetch(url, {
-               method: 'GET',
-               body: params,
-               headers: {
-                'Content-Type' : 'application/x-www-form-urle'
-               }
-             }).then(function (response){
-               return response.text();      
-             }).then(function(text){
-               console.log(text);
-             }).catch(function(error){
-               console.error(error);
-             })
-           });
-           asyncFunc();
-         }
-  
-      </script>
-
+    <script src="../js/currency.js"></script>
 </body>
 
 </html>
