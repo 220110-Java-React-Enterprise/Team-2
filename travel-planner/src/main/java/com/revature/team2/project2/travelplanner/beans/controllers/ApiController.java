@@ -19,6 +19,9 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.ResponseBody;
 
+/**
+ * Controller to guide consumption of third-party APIs.
+ */
 @RestController
 @RequestMapping("/api")
 @Slf4j
@@ -28,6 +31,11 @@ public class ApiController {
 
     /**
      * GET request for the Currency Converter API.
+     * 
+     * @param want   the currency code that you are looking for
+     * @param have   the currency code that you currently have
+     * @param amount the currency amount to convert
+     * @return the converted currency amount
      */
     @GetMapping(value = "/convert", produces = { MediaType.APPLICATION_JSON_VALUE })
     public Double convertRequest(@RequestParam String want, @RequestParam String have, @RequestParam String amount) {
@@ -68,6 +76,13 @@ public class ApiController {
 
     /**
      * GET request for the Weather API.
+     * Utilizes an additional call to the Geocoding API
+     * for conversion of city to latitude & longitude.
+     * 
+     * @param cityName    name of city to check for
+     * @param stateCode   OPTIONAL, state code for US searches
+     * @param countryCode OPTIONAL, country code for city in country search
+     * @return JSON string containing data from API response
      */
     // TODO stateCode & countryCode?
     @GetMapping(value = "/weather", produces = { MediaType.APPLICATION_JSON_VALUE })
@@ -160,9 +175,7 @@ public class ApiController {
      * 
      * @return apikey
      */
-    // indicates that the method should be called exactly once after dependencies
-    // are injected
-    @PostConstruct
+    @PostConstruct // called exactly once after dependencies are injected
     private void loadApiKeys() {
         try {
             // properties file

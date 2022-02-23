@@ -10,42 +10,83 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * Acts as a servlet for HTTP requests
+ * Controller to guide requests related to Users.
  */
-@RestController // @Response and @Controller are implied by @RestController
+@RestController
 @RequestMapping("/users")
 public class UserController {
     private final UserRepository userRepository;
 
+    /**
+     * Retrieve access to the UserRepository from Spring.
+     * 
+     * @param userRepository
+     */
     @Autowired
     public UserController(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
-    // GET all users
-    @RequestMapping(method = RequestMethod.GET)
-    public List<User> getAllUsers(){
-       return userRepository.findAll();
+    /**
+     * GET all Users.
+     * 
+     * @return List of all existing Users
+     */
+    @GetMapping()
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
     }
 
-    // GET a user by ID
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public Optional<User> getUserById(@PathVariable Integer id){
-
+    /**
+     * GET a User by id.
+     * 
+     * @param id
+     * @return the User based on id
+     */
+    @GetMapping(value = "/id")
+    public Optional<User> getUserById(@RequestParam Integer id) {
         return userRepository.findById(id);
     }
 
-    // POST a user
-    @RequestMapping(method = RequestMethod.POST)
-    public void postUser(@RequestBody User user){
+    /**
+     * GET a User by email.
+     * Emails are unique and should not cause conflicting results.
+     * 
+     * @param email
+     * @return the User based on email
+     */
+    @GetMapping(value = "/email")
+    public Optional<User> getUserByEmail(@RequestParam String email) {
+        return userRepository.findByEmail(email);
+    }
+
+    /**
+     * POST a User.
+     * 
+     * @param user
+     */
+    @PostMapping()
+    public void postUser(@RequestBody User user) {
         userRepository.save(user);
     }
 
-    // DELETE a user by ID
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public void deleteUserById(@PathVariable Integer id){
+    /**
+     * DELETE a User by id.
+     * 
+     * @param id
+     */
+    @DeleteMapping(value = "/id")
+    public void deleteUserById(@RequestParam Integer id) {
         userRepository.deleteById(id);
     }
 
-
+    /**
+     * DELETE a User by email.
+     * 
+     * @param email
+     */
+    @DeleteMapping(value = "/email")
+    public void deleteUserByEmail(@RequestParam String email) {
+        userRepository.deleteByEmail(email);
+    }
 }
