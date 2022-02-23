@@ -12,6 +12,7 @@ submitBtn.addEventListener('click', function(e) {
     console.log(oldAmt);
     let newCur = document.getElementById("want").value;
     console.log(newCur);
+    
     let url = "http://localhost:8080/api/convert?have=" + origCur + "&want=" + newCur + "&amount=" + oldAmt   ;
     let response = fetch(url, {
         headers: {
@@ -25,6 +26,13 @@ submitBtn.addEventListener('click', function(e) {
         document.getElementById("new_amount").append(data)
 
     });
+
+    var x = document.getElementById("result");
+        if (x.style.visibility === "hidden") {
+            x.style.visibility = "visible";
+        } else {
+            x.style.visibility = "hidden";
+        }
 
     // try {
     //     let result = response.json;
