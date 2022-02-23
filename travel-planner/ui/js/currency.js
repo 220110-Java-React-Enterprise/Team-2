@@ -26,6 +26,13 @@ submitBtn.addEventListener('click', function(e) {
 
     });
 
+    var x = document.getElementById("result");
+        if (x.style.visibility === "hidden") {
+            x.style.visibility = "visible";
+        } else {
+            x.style.visibility = "hidden";
+        }
+
     // try {
     //     let result = response.json;
     //     console.log(result);
