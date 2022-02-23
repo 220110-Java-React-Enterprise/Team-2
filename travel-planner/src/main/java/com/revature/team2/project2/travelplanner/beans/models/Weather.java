@@ -7,6 +7,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Object for storing the Weather API response.
+ */
 @Getter
 @Setter
 @NoArgsConstructor

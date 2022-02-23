@@ -7,6 +7,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Object for parsing & storing the Geocoding API response.
+ */
 @Getter
 @Setter
 @NoArgsConstructor

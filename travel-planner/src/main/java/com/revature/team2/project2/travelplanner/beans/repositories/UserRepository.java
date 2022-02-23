@@ -7,17 +7,28 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
- * Handles data persistance CRUD
+ * Data persistence for User.
  */
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
     /**
-     * JpaRepository creates a concrete implementation for you
-     * this is based on the naming sheme of the function itself
-     * there are plenty of other options besides this.
+     * JpaRepository creates a concrete implementation for you based on the naming
+     * scheme of the function itself.
+    */
+
+    
+    /**
+     * Retrieve a User by their email.
      * 
-     * @param email the email associated with user to look for
-     * @return a User object associated with email if it exists
+     * @param email
+     * @return a User object associated with email
      */
     Optional<User> findByEmail(String email);
+
+    /**
+     * Delete a User by their email.
+     * 
+     * @param email
+     */
+    void deleteByEmail(String email);
 }
