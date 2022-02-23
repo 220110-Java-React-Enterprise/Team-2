@@ -19,6 +19,7 @@
 
     <h3>Currency Exchange Calculator</h3>
     <form id="form1" method="get" onsubmit="getNewAmount()">
+      <!---->
      
           <label for="have">Original Currency:</label>
           <input required type="text" id="have" name="have" ><br>
@@ -32,14 +33,15 @@
         <label for="want">Target Currency:</label>
         <input required type="text" id="want" name="want" value=""><br>
           <!---connect to API here to input currency types and amount and to output new amount-->
-        
 
         
-        <label for="new_amount">Target Currency Amount:</label>
-        <output id="new_amount" for="new_amount"></output><br>
-        
-      <button id="submitButton" type="submit" value="submit" style="margin-top: 2%; margin-bottom: 2%;">Calculate</button>
+      <button id="calcButton" type="submit" value="submit" style="margin-top: 2%; margin-bottom: 2%;">Calculate</button>
     </form>
+
+    <div id = "result">
+        <label id="new_amount" for="new_amount">Target Currency Amount:</label>
+        
+    </div>
 
     <div>
       <h3>Return to Home Page? <button><a href="../index.html">Home</a></button></h3>
