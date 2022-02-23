@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Object for interacting with Admins.
+ */
 @Getter
 @Setter
 @NoArgsConstructor

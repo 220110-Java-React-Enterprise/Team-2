@@ -6,12 +6,14 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-
+/**
+ * Object for interacting with Iteneraries produced by a User.
+ */
 @Setter
 @NoArgsConstructor
 @Getter
 @Entity
-@Table(name ="itineraries")
+@Table(name = "itineraries")
 public class Itinerary {
 
     @Id

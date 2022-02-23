@@ -5,6 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Object for storing the Currency Converter API response.
+ */
 @Getter
 @Setter
 @NoArgsConstructor

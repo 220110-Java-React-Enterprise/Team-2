@@ -10,6 +10,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Helper class to parse Weather API response.
+ */
 @Getter
 @Setter
 @NoArgsConstructor
