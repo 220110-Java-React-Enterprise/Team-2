@@ -29,9 +29,6 @@ public class User {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "user_name")
-    private String userName;
-
     @Column(name = "password")
     private String password;
 
@@ -39,16 +36,10 @@ public class User {
     @OneToMany
     private List<Itinerary> itineraries = new LinkedList<>();
 
-    public User(String userName, String password) {
-        this.userName = userName;
-        this.password = password;
-    }
-
-    public User(String firstName, String lastName, String email, String userName, String password) {
+    public User(String firstName, String lastName, String email, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.userName = userName;
         this.password = password;
     }
 
