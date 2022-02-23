@@ -23,29 +23,34 @@ public class UserController {
     }
 
     // GET all users
-    @RequestMapping(method = RequestMethod.GET)
-    public List<User> getAllUsers(){
-       return userRepository.findAll();
+    @GetMapping()
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
     }
 
     // GET a user by ID
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public Optional<User> getUserById(@PathVariable Integer id){
-
+    @GetMapping(value = "/id")
+    public Optional<User> getUserById(@RequestParam Integer id) {
         return userRepository.findById(id);
     }
 
+    // GET a user by email
+    //   emails are unique so this should be OK
+    @GetMapping(value = "/email")
+    public Optional<User> getUserByEmail(@RequestParam String email) {
+        return userRepository.findByEmail(email);
+    }
+
     // POST a user
-    @RequestMapping(method = RequestMethod.POST)
-    public void postUser(@RequestBody User user){
+    @PostMapping()
+    public void postUser(@RequestBody User user) {
         userRepository.save(user);
     }
 
     // DELETE a user by ID
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public void deleteUserById(@PathVariable Integer id){
+    @DeleteMapping(value = "/id")
+    public void deleteUserById(@RequestParam Integer id) {
         userRepository.deleteById(id);
     }
-
 
 }
