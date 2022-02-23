@@ -12,8 +12,8 @@
 
   <div>
 
-    <h3>Forecast</h3>
-    <form action="" method="post">
+    <h1>Forecast</h1>
+    <form action="" method="get" onsubmit="getForecast()">
 
       <label for="city">City</label>
       <input required type="text" id="city" name="city"><br>
@@ -21,17 +21,24 @@
 
 
       <label for="country">Country</label>
-      <input required type="text" id="country" name="country"><br>
+      <input type="text" id="country" name="country"><br>
 
 
 
       <div style="text-align: center;">
-        <button style="margin-top: 2%; margin-bottom: 2%; ">Get Forecast</button>
+        <button id="getForecast" type="submit" value="submit" style="margin-top: 2%; margin-bottom: 2%; ">Get Forecast</button>
       </div>
+  
 
     </form>
   </div>
 
+    <div style="visibility: hidden;" id="forecast">
+        <h2 id="forecastCity">Forecast for </h2>
+        <div id="print_fore">
+         
+        </div>
+    </div>
 
   <div>
     <h3>Return to Home Page? <button><a href="../index.html">Home</a></button></h3>
