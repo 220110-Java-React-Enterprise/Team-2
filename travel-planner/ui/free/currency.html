@@ -8,53 +8,12 @@
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="icon" href="../favicon1.ico?v=2">
   <title>Currency Calculator</title>
+  
 
 
 </head>
 
 <body>
-  <!-- THIS IS WHERE WE ARE - METHOD GETS CALLED BUT CONSOLE GETS CLEARED, TRYING TO SUBMIT 
-  FORM DATA TO JAVASCRIPT-->
-  <script>
-    async function getNewAmount() {
-      console.log("========");
-      let url = "http://localhost:8080/api/convert";
-      e.preventDefault();
-      const params = new URLSearchParams([...new FormData(e.target).entries()]);
-      let response = await fetch(url, {
-        // headers: {
-        //   'Content-Type': 'application/json;charset=utf-8'
-        // }
-        method: "GET",
-        body: params
-      });
-
-      try {
-        console.log("========");
-        let result = response.json();
-        console.log(result);
-      } catch (error) {
-        console.log(error);
-      }
-      //NEED TO DO SOMETHING MORE WITH THE RESPONSE
-    }
-
-    
-
-
-      //asyncFunc();
-
-      // document.forms[0].onsubmit = async (e) => {
-      //   e.preventDefault();
-      //   const params = new URLSearchParams([...new FormData(e.target).entries()]);
-      //   // fetch("/path/to/server", {method:"POST", body:params})
-      //   const response = await new Response(params).text();
-      //   console.log(response);
-      // }
-
-
-  </script>
-
 
   <div>
 
@@ -63,7 +22,7 @@
       <table style="margin-left: 35%; width: 30%; margin-right: 35%;">
         <tr>
           <td><label for="have">Original Currency:</label></td>
-          <td><input type="text" id="have" name="have" value=""></td>
+          <td><input type="text" id="have" name="have" ></td>
         </tr>
 
         <tr>
@@ -83,7 +42,7 @@
         </tr>
 
       </table>
-      <button type="submit" value="submit" style="margin-top: 2%; margin-bottom: 2%;">Calculate</button>
+      <button id="submitButton" type="submit" value="submit" style="margin-top: 2%; margin-bottom: 2%;">Calculate</button>
     </form>
 
     <div>
@@ -91,7 +50,7 @@
     </div>
 
 
-
+    <script src="../js/script.js"></script>
 </body>
 
 </html>
