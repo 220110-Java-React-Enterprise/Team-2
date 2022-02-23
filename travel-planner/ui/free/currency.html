@@ -19,29 +19,25 @@
 
     <h3>Currency Exchange Calculator</h3>
     <form id="form1" method="get" onsubmit="getNewAmount()">
-      <table style="margin-left: 35%; width: 30%; margin-right: 35%;">
-        <tr>
-          <td><label for="have">Original Currency:</label></td>
-          <td><input type="text" id="have" name="have" ></td>
-        </tr>
+     
+          <label for="have">Original Currency:</label>
+          <input required type="text" id="have" name="have" ><br>
+        
 
-        <tr>
-          <td><label for="amount">Original Amount:</label></td>
-          <td><input type="number" id="amount" name="amount" value=""></td>
-        </tr>
+        <label for="amount">Original Amount:</label>
+        <input required type="number" id="amount" name="amount" value=""><br>
+        
 
-        <tr>
-          <td><label for="want">Target Currency:</label></td>
-          <td><input type="text" id="want" name="want" value=""></td>
+        
+        <label for="want">Target Currency:</label>
+        <input required type="text" id="want" name="want" value=""><br>
           <!---connect to API here to input currency types and amount and to output new amount-->
-        </tr>
+        
 
-        <tr>
-          <td><label for="new_amount">Target Currency Amount:</label></td>
-          <td><output name="new_amount" for="have old_amount want"></output></td>
-        </tr>
-
-      </table>
+        
+        <label for="new_amount">Target Currency Amount:</label>
+        <output id="new_amount" for="new_amount"></output><br>
+        
       <button id="submitButton" type="submit" value="submit" style="margin-top: 2%; margin-bottom: 2%;">Calculate</button>
     </form>
 
@@ -50,7 +46,7 @@
     </div>
 
 
-    <script src="../js/script.js"></script>
+    <script src="../js/currency.js"></script>
 </body>
 
 </html>
