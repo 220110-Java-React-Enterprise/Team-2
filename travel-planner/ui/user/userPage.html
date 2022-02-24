@@ -29,8 +29,10 @@
     
       <button id="button-currency" style="margin-top: 2%;">Calculate</button>
     </form>
-    <p>New Amount: </p>
+    <div style="visibility: hidden;" id="result2">
+      <p>New Amount: </p>
     <p id="new_currency_amount"></p>
+    </div>
     <hr>
   </div>
 
@@ -42,9 +44,9 @@
         <input type="text" id="city" name="city" value=""><br>
       <button id="button-predict" type="submit" value="submit" style="margin-top: 2%;">Predict</button>
     </form>
-    <div id="another-forecast">
+    <div style="visibility: hidden;" id="another-forecast">
       <p id="userForecast">Forecast for </p>
-      <div id="print_fore">
+      <div >
        <p id="6"></p>
        <p id="7"></p>
        <p id="8"></p>

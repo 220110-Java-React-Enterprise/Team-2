@@ -29,7 +29,7 @@ submitBtn.addEventListener('click', function(e) {
 
     });
 
-    var x = document.getElementById("result");
+    let x = document.getElementById("result");
         if (x.style.visibility === "hidden") {
             x.style.visibility = "visible";
         }

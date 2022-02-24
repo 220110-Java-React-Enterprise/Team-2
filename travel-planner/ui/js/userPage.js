@@ -29,12 +29,10 @@ submitBtn.addEventListener('click', function(e) {
 
     });
 
-    // var x = document.getElementById("result");
-    //     if (x.style.visibility === "hidden") {
-    //         x.style.visibility = "visible";
-    //     } else {
-    //         x.style.visibility = "hidden";
-    //     }
+    let x = document.getElementById("result2");
+        if (x.style.visibility === "hidden") {
+            x.style.visibility = "visible";
+        } 
 
     try {
         let result = response.json;
@@ -120,6 +118,11 @@ submitButton.addEventListener("click", function(event) {
                 document.getElementById("0").append("   Weather: ")
                 document.getElementById("0").append(data['list'][4]['weather'][0]["description"])
             
+
+                let x = document.getElementById("another-forecast");
+                if (x.style.visibility === "hidden") {
+                    x.style.visibility = "visible";
+                }
          
         });
 
