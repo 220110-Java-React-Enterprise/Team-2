@@ -42,6 +42,87 @@ submitBtn.addEventListener('click', function(e) {
     }
 
 })
+
+let submitButton = document.getElementById("button-predict");
+console.log(submitButton);
+
+submitButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    const params = new URLSearchParams;
+    console.log("get forecast button clicked");
+    let cityName = document.getElementById("city").value;
+    console.log(city);
+
+    let url = "http://localhost:8080/api/weather?cityName=" + cityName;
+    let response = fetch(url, {
+        headers: {'Content_Type': 'application/json;charset=utf-8'},
+        method: "get"
+    }).then(response => response.json())
+        .then(function(data) {
+            console.log(data)
+            document.getElementById("userForecast").append(cityName)
+            
+            console.log(data['list'][0])
+                document.getElementById("6").append("Date and Time: ")
+                document.getElementById("6").append(data['list'][0]["dt_txt".slice(0,9)])
+                document.getElementById("6").append("  Min Temp: ")
+                document.getElementById("6").append(data['list'][0]["tempMin"])
+                document.getElementById("6").append("  Max Temp: ")
+                document.getElementById("6").append(data['list'][0]["tempMax"]) 
+                document.getElementById("6").append("  Humidity: ")
+                document.getElementById("6").append(data['list'][0]["humidity"])
+                document.getElementById("6").append("   Weather: ")
+                document.getElementById("6").append(data['list'][4]['weather'][0]["description"])
+                
+                document.getElementById("7").append("Date and Time: ")
+                document.getElementById("7").append(data['list'][8]["dt_txt"])
+                document.getElementById("7").append("  Min Temp: ")
+                document.getElementById("7").append(data['list'][8]["tempMin"])
+                document.getElementById("7").append("  Max Temp: ")
+                document.getElementById("7").append(data['list'][8]["tempMax"]) 
+                document.getElementById("7").append("  Humidity: ")
+                document.getElementById("7").append(data['list'][8]["humidity"])
+                document.getElementById("7").append("   Weather: ")
+                document.getElementById("7").append(data['list'][4]['weather'][0]["description"])
+
+                document.getElementById("8").append("Date and Time: ")
+                document.getElementById("8").append(data['list'][16]["dt_txt"])
+                document.getElementById("8").append("  Min Temp: ")
+                document.getElementById("8").append(data['list'][16]["tempMin"])
+                document.getElementById("8").append("  Max Temp: ")
+                document.getElementById("8").append(data['list'][16]["tempMax"]) 
+                document.getElementById("8").append("  Humidity: ")
+                document.getElementById("8").append(data['list'][16]["humidity"])
+                document.getElementById("8").append("   Weather: ")
+                document.getElementById("8").append(data['list'][4]['weather'][0]["description"])
+
+                document.getElementById("9").append("Date and Time: ")
+                document.getElementById("9").append(data['list'][24]["dt_txt"])
+                document.getElementById("9").append("  Min Temp: ")
+                document.getElementById("9").append(data['list'][24]["tempMin"])
+                document.getElementById("9").append("  Max Temp: ")
+                document.getElementById("9").append(data['list'][24]["tempMax"]) 
+                document.getElementById("9").append("  Humidity: ")
+                document.getElementById("9").append(data['list'][24]["humidity"])
+                document.getElementById("9").append("   Weather: ")
+                document.getElementById("9").append(data['list'][4]['weather'][0]["description"])
+
+                document.getElementById("0").append("Date and Time: ")
+                document.getElementById("0").append(data['list'][32]["dt_txt"])
+                document.getElementById("0").append("  Min Temp: ")
+                document.getElementById("0").append(data['list'][32]["tempMin"])
+                document.getElementById("0").append("  Max Temp: ")
+                document.getElementById("0").append(data['list'][32]["tempMax"]) 
+                document.getElementById("0").append("  Humidity: ")
+                document.getElementById("0").append(data['list'][32]["humidity"])
+                document.getElementById("0").append("   Weather: ")
+                document.getElementById("0").append(data['list'][4]['weather'][0]["description"])
+            
+         
+        });
+
+    
+})
     
 
 
