@@ -1,5 +1,3 @@
-let submitButton = document.getElementById("getForecast");
-console.log(submitButton);
 
 submitButton.addEventListener("click", function(event) {
     event.preventDefault();
