@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -21,6 +23,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
+    @JsonIgnore
     private Integer user_id;
 
     @Column(name = "first_name")
@@ -37,6 +40,7 @@ public class User {
 
     @Column(name = "itineraries")
     @OneToMany
+    @JsonIgnore
     private List<Itinerary> itineraries = new LinkedList<>();
 
     public User(String firstName, String lastName, String email, String password) {

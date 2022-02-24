@@ -6,6 +6,8 @@ import com.revature.team2.project2.travelplanner.beans.repositories.UserReposito
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -14,6 +16,7 @@ import java.util.Optional;
  */
 @RestController
 @RequestMapping("/users")
+@Slf4j
 public class UserController {
     private final UserRepository userRepository;
 
@@ -64,10 +67,24 @@ public class UserController {
      * POST a User.
      * 
      * @param user
+     * @return String containing information regarding success or failure.
      */
     @PostMapping()
-    public void postUser(@RequestBody User user) {
-        userRepository.save(user);
+    public String postUser(@RequestBody User user) {
+        try {
+            userRepository.save(user);
+        } catch (Exception e) {
+            log.error("User cannot be registered.", e);
+
+            // inform failed result
+            return "User cannot be registered. The email you entered ("
+                    + user.getEmail() + ") may already be in use.";
+        }
+
+        // inform successful result
+        return "User " + user.getFirstName() + user.getLastName() +
+                " (ID = " + user.getUser_id() +
+                ") registered successfully!";
     }
 
     /**
