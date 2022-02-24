@@ -51,14 +51,14 @@ regButton.addEventListener('click', function (e) {
 
     // send the request
     // TODO output post's response to user
-    let fetched = fetch(url, options)
-        .then((response) => response.json())
-        .then((data) => {
-            console.log("Success: ", data);
-        })
-        .catch((error) => {
-            console.error("Error: ", error);
-        });
+    // let fetched = fetch(url, options)
+    //     .then((response) => response.json())
+    //     .then((data) => {
+    //         console.log("Success: ", data);
+    //     })
+    //     .catch((error) => {
+    //         console.error("Error: ", error);
+    //     });
 
     // TODO autonavigate back to main page somehow?
     //   if not, just do a "return home" button
