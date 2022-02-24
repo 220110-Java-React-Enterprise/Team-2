@@ -4,10 +4,10 @@ let regButton = document.getElementById("registerButton");
 //! fact finding
 console.log(regButton)
 
-regButton.addEventListener('click', function (e) {
-    // easily changeable base url
-    let url = "http://localhost:8080/"
+// base url
+const url = "http://localhost:8080/users"
 
+regButton.addEventListener('click', function (e) {
     e.preventDefault();
 
     //! fact finding
@@ -42,25 +42,37 @@ regButton.addEventListener('click', function (e) {
         }
     }
 
-    // build the search parameters
-    //let searchParams = new URLSearchParams(user);
-
-    // finish building the url
-    //url += "api/convert?" + searchParams.toString();
-    url += "users";
-
     // send the request
-    // TODO output post's response to user
-    let fetched = fetch(url, options)
-        .then((response) => response.json())
-        .then((data) => {
-            console.log("Success: ", data);
+    fetch(url, options)
+        // convert the response to JSON
+        .then((response) => {
+            return response.json();
         })
+
+        // let the user know whether or not registration was successful
+        .then((data) => {
+            // inform user of response
+            document.getElementById("response").innerHTML = data;
+
+            // create & insert a line break
+            linebreak = document.createElement("br");
+            document.getElementById("response").appendChild(linebreak);
+
+            // inform user of redirect
+            document.getElementById("response").append("You will be redirected in 5 seconds.");
+        })
+
+        // redirect back to the home screen
+        .then(() => {
+            // wait for user to read stuff
+            setTimeout(() => {
+                window.location.replace("../index.html");
+            }, 5000)();
+        })
+
+        // catch any errors
         .catch((error) => {
             console.error("Error: ", error);
         });
-
-    // TODO autonavigate back to main page somehow?
-    //   if not, just do a "return home" button
 
 })
