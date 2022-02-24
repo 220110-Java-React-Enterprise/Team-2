@@ -4,10 +4,10 @@ let regButton = document.getElementById("registerButton");
 //! fact finding
 console.log(regButton)
 
-regButton.addEventListener('click', function (e) {
-    // easily changeable base url
-    let url = "http://localhost:8080/"
+// base url
+const url = "http://localhost:8080/users"
 
+regButton.addEventListener('click', function (e) {
     e.preventDefault();
 
     //! fact finding
@@ -42,19 +42,14 @@ regButton.addEventListener('click', function (e) {
         }
     }
 
-    // build the search parameters
-    //let searchParams = new URLSearchParams(user);
-
-    // finish building the url
-    //url += "api/convert?" + searchParams.toString();
-    url += "users";
-
     // send the request
-    // TODO output post's response to user
-    let fetched = fetch(url, options)
-        .then((response) => response.json())
+    fetch(url, options)
+        .then((response) => {
+            return response.json();
+        })
         .then((data) => {
-            console.log("Success: ", data);
+            console.log(data);
+            document.getElementById("response").innerHTML = data;
         })
         .catch((error) => {
             console.error("Error: ", error);

@@ -1,5 +1,6 @@
 package com.revature.team2.project2.travelplanner.beans.controllers;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.team2.project2.travelplanner.beans.models.User;
 import com.revature.team2.project2.travelplanner.beans.repositories.UserRepository;
 
@@ -71,20 +72,46 @@ public class UserController {
      */
     @PostMapping()
     public String postUser(@RequestBody User user) {
+        // mapper for json'ing resultString
+        ObjectMapper mapper = new ObjectMapper();
+
+        // successful or not?
+        Boolean isSaved = true;
+
+        // result string is a failure by default
+        String resultString = null;
+
         try {
+            // save the user
             userRepository.save(user);
+
         } catch (Exception e) {
             log.error("User cannot be registered.", e);
 
-            // inform failed result
-            return "User cannot be registered. The email you entered ("
-                    + user.getEmail() + ") may already be in use.";
+            // User wasn't saved
+            isSaved = false;
         }
 
-        // inform successful result
-        return "User " + user.getFirstName() + user.getLastName() +
-                " (ID = " + user.getUser_id() +
-                ") registered successfully!";
+        // try to map the successful result string
+        try {
+            if (isSaved) {
+                // try to map the successful result string
+                resultString = mapper.writeValueAsString(
+                        String.format("User %s %s (ID = %d) registered successfully!",
+                                user.getFirstName(), user.getLastName(), user.getUser_id()));
+
+            } else {
+                // try to map the failure result string
+                resultString = mapper.writeValueAsString(
+                        String.format("User cannot be registered. The email you entered (%s) may already be in use.",
+                                user.getEmail()));
+            }
+        } catch (Exception e) {
+            log.error("Registration string JSON mapping failed.");
+        }
+
+        // return the result
+        return resultString;
     }
 
     /**
