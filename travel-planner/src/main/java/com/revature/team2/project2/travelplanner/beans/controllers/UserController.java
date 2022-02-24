@@ -3,6 +3,8 @@ package com.revature.team2.project2.travelplanner.beans.controllers;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.team2.project2.travelplanner.beans.models.User;
 import com.revature.team2.project2.travelplanner.beans.repositories.UserRepository;
@@ -119,9 +121,6 @@ public class UserController {
         // return the result
         return resultString;
     }
-    
-    
-
 
     /**
      * DELETE a User by id.
@@ -139,7 +138,29 @@ public class UserController {
      * @param email
      */
     @DeleteMapping(value = "/email")
-    public void deleteUserByEmail(@RequestParam String email) {
-        userRepository.deleteByEmail(email);
+    @Transactional
+    public String deleteUserByEmail(@RequestParam String email) {
+        // mapper for json'ing resultString
+        ObjectMapper mapper = new ObjectMapper();
+
+        // string to store result in for parsing
+        String resultString = null;
+
+        // try to delete user based on their email
+        try {
+            userRepository.deleteByEmail(email);
+        } catch (Exception e) {
+            log.error("Account deletion unsuccessful.", e);
+        }
+
+        // map a string for response
+        try {
+            resultString = mapper.writeValueAsString(resultString);
+        } catch (Exception e) {
+            log.error("Deletion String JSON mapping failed.", e);
+        }
+
+        // return the result
+        return resultString;
     }
 }

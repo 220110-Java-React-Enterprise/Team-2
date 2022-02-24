@@ -125,11 +125,66 @@ submitButton.addEventListener("click", function(event) {
                 }
         });
 }) //END OF FORECAST FUNCTION!!!!!!!!!!!!!!!!!!!
-    
 
+// retrieve the button from the page
+let deleteButton = document.getElementById("deleteButton");
 
+//! fact finding
+console.log(deleteButton)
 
+deleteButton.addEventListener('click', function (e) {
+    e.preventDefault();
 
+    // base url
+    let url = "http://localhost:8080/users/email?email="
 
+    //! fact finding
+    console.log("deleteButton clicked")
 
+    // retrieve form data from the page
+    let email = document.getElementById("deleteEmail").value;
 
+    //! fact finding
+    console.log("email: ", email);
+
+    // by request parameters
+    url += email;
+    console.log(url)
+
+    // build the options object (for fetch)
+    const options = {
+        method: 'DELETE',
+        // convert the email to JSON
+        body: JSON.stringify({ email }),
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+        }
+    }
+
+    // send the request
+    fetch(url, options)
+        // convert the response to JSON
+        .then((response) => {
+            return response.json();
+        })
+
+        // inform user of redirect
+        .then((data) => {
+            console.log(data);
+            alert("Deletion successful!\nYou will be redirected in 5 seconds.");
+        })
+
+        // redirect back to the home screen
+        .then(() => {
+            // wait for user to read stuff
+            setTimeout(() => {
+                window.location.replace("../index.html");
+            }, 5000)();
+        })
+
+        // catch any errors
+        .catch((error) => {
+            console.error("Error: ", error);
+        });
+
+})
