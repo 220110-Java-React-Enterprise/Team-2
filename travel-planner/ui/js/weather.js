@@ -1,3 +1,5 @@
+// retrieve the button from the page
+let submitButton = document.getElementById("getForecast");
 
 submitButton.addEventListener("click", function(event) {
     event.preventDefault();
