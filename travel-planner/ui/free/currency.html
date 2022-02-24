@@ -8,90 +8,45 @@
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="icon" href="../favicon1.ico?v=2">
   <title>Currency Calculator</title>
+  
 
 
 </head>
 
 <body>
-  <!-- THIS IS WHERE WE ARE - METHOD GETS CALLED BUT CONSOLE GETS CLEARED, TRYING TO SUBMIT 
-  FORM DATA TO JAVASCRIPT-->
-  <script>
-    async function getNewAmount() {
-      console.log("========");
-      let url = "http://localhost:8080/api/convert";
-      e.preventDefault();
-      const params = new URLSearchParams([...new FormData(e.target).entries()]);
-      let response = await fetch(url, {
-        // headers: {
-        //   'Content-Type': 'application/json;charset=utf-8'
-        // }
-        method: "GET",
-        body: params
-      });
-
-      try {
-        console.log("========");
-        let result = response.json();
-        console.log(result);
-      } catch (error) {
-        console.log(error);
-      }
-      //NEED TO DO SOMETHING MORE WITH THE RESPONSE
-    }
-
-    
-
-
-      //asyncFunc();
-
-      // document.forms[0].onsubmit = async (e) => {
-      //   e.preventDefault();
-      //   const params = new URLSearchParams([...new FormData(e.target).entries()]);
-      //   // fetch("/path/to/server", {method:"POST", body:params})
-      //   const response = await new Response(params).text();
-      //   console.log(response);
-      // }
-
-
-  </script>
-
 
   <div>
 
-    <h3>Currency Exchange Calculator</h3>
+    <h1>Currency Exchange Calculator</h1>
     <form id="form1" method="get" onsubmit="getNewAmount()">
-      <table style="margin-left: 35%; width: 30%; margin-right: 35%;">
-        <tr>
-          <td><label for="have">Original Currency:</label></td>
-          <td><input type="text" id="have" name="have" value=""></td>
-        </tr>
+     
+          <label for="have">Original Currency:</label>
+          <input required type="text" id="have" name="have" ><br>
+        
 
-        <tr>
-          <td><label for="amount">Original Amount:</label></td>
-          <td><input type="number" id="amount" name="amount" value=""></td>
-        </tr>
+        <label for="amount">Original Amount:</label>
+        <input required type="number" id="amount" name="amount" value=""><br>
+        
 
-        <tr>
-          <td><label for="want">Target Currency:</label></td>
-          <td><input type="text" id="want" name="want" value=""></td>
-          <!---connect to API here to input currency types and amount and to output new amount-->
-        </tr>
+        
+        <label for="want">Target Currency:</label>
+        <input required type="text" id="want" name="want" value=""><br>
 
-        <tr>
-          <td><label for="new_amount">Target Currency Amount:</label></td>
-          <td><output name="new_amount" for="have old_amount want"></output></td>
-        </tr>
-
-      </table>
-      <button type="submit" value="submit" style="margin-top: 2%; margin-bottom: 2%;">Calculate</button>
+        
+      <button  id="calcButton" type="submit" value="submit" style="margin-top: 2%; margin-bottom: 2%;">Calculate</button>
     </form>
 
+    <div style="visibility: hidden;" id = "result">
+        <h2>Target Currency Amount: </h2>
+        <h2 id="new_amount" for="new_amount"></h2>
+        
+    </div>
+      <hr>
     <div>
       <h3>Return to Home Page? <button><a href="../index.html">Home</a></button></h3>
     </div>
 
-
-
+    <script src="../js/currency.js"></script>
 </body>
 
 </html>

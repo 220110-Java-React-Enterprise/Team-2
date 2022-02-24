@@ -1,45 +1,57 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Forecast</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="icon" href="../favicon1.ico?v=2">
-  </head>
-  <body>
 
-    <div>
+<head>
+  <meta charset="utf-8">
+  <title>Forecast</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" href="../favicon1.ico?v=2">
+</head>
 
-      <h3>Forecast</h3>
-      <form action="" method="post">
-        <table style="margin-left: 40%; width: 20%; margin-right: 40%;">
-          <tr>
-            <td><label for="city">City</label></td>
-            <td><input type="text" id="city" name="city" value=""></td>
-          </tr>
+<body>
 
-          <tr>
-            <td><label for="country">Country</label></td>
-            <td><input type="text" id="country" name="country" value=""></td>
-          </tr>  
+  <div>
 
-        </table>
-            <div style="text-align: center;">
-              <button style="margin-top: 2%; margin-bottom: 2%; ">Get Forecast</button>
-            </div>
+    <h1>Forecast</h1>
+    <form action="" method="get" onsubmit="getForecast()">
 
-      </form>
+      <label for="city">City</label>
+      <input required type="text" id="city" name="city"><br>
+
+
+<!-- 
+      <label for="country">Country</label>
+      <input type="text" id="country" name="country"><br> -->
+
+
+
+      <div style="text-align: center;">
+        <button id="getForecast" type="submit" value="submit" style="margin-top: 2%; margin-bottom: 2%; ">Get Forecast</button>
+      </div>
+  
+
+    </form>
+  </div>
+
+    <div style="visibility: hidden;" id="forecast">
+        <p>Forecast for </p>
+        <p id="forecastCity"></p>
+        <div id="print_fore">
+         <p id="1"></p>
+         <p id="2"></p>
+         <p id="3"></p>
+         <p id="4"></p>
+         <p id="5"></p>
+        </div>
+        
     </div>
+    <hr>
+  <div>
+    <h3>Return to Home Page? <button><a href="../index.html">Home</a></button></h3>
+  </div>
 
 
-    
-    <!--need to connect to API here to get forecast-->
-    
+  <script src="../js/weather.js"></script>
+</body>
 
-
-    <div>
-      <h3>Return to Home Page?  <button><a href="../index.html">Home</a></button></h3>
-    </div>
-
-  </body>
 </html>

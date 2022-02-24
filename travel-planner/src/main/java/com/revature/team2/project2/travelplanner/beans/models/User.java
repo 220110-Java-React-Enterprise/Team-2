@@ -10,20 +10,26 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Object for interacting with Users.
+ */
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
 @Table(name = "users")
 public class User {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "user_id")
-	private Integer user_id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "user_id")
+  @JsonIgnore
+  private Integer user_id;
 
 	@Column(name = "first_name")
 	private String firstName;
@@ -34,32 +40,23 @@ public class User {
 	@Column(name = "email")
 	private String email;
 
-	@Column(name = "user_name")
-	private String userName;
+  @Column(name = "email", unique = true, nullable = false)
+  private String email;
 
-	@Column(name = "password")
-	private String password;
+  @Column(name = "password", nullable = false)
+  private String password;
 
-	@Column(name = "itineraries")
-	@OneToMany
-	private List<Itinerary> itineraries = new LinkedList<>();
+  @Column(name = "itineraries")
+  @OneToMany
+  @JsonIgnore
+  private List<Itinerary> itineraries = new LinkedList<>();
 
-	public User(String userName, String password) {
-		this.userName = userName;
-		this.password = password;
-	}
-
-	public User(String firstName, String lastName, String email, String userName, String password) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-		this.userName = userName;
-		this.password = password;
-	}
-
-	public void addItinerary(Itinerary itinerary) {
-		itineraries.add(itinerary);
-	}
+  public User(String firstName, String lastName, String email, String password) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.email = email;
+      this.password = password;
+  }
 
 	public void removeItinerary(Itinerary itinerary) {
 		itineraries.remove(itinerary);
