@@ -5,10 +5,9 @@ Have you been wasting time with expensive travel agents? Or maybe you've found y
 ## User Stories
   - [x] As a guest, I can view exchange rate between two currencies.
   - [x] As a guest, I can view weather about a travel location.
-  - [ ] As a guest, I can register for an account.
+  - [x] As a guest, I can register for an account.
   - [ ] As a user, I can login to an account.
   - [ ] As a user, I can delete my account.
-  - [ ] As a user, I can use more feature-rich versions of guest features.
   - [ ] As a user, I can save an itinerary.
 
 
@@ -26,11 +25,11 @@ Have you been wasting time with expensive travel agents? Or maybe you've found y
   - [x] CRUD operations are supported for one or more domain objects via the web application's API endpoints
   - [x] Client/Server communication is done with JSON in HTTP request and response bodies
   - [x] All low-level persistence logic is abstracted away with Hibernate/Spring Data
-  - [ ] Documentation (all classes and methods have adequate Javadoc comments)
-  - [ ] All Exceptions are caught and logged
+  - [x] Documentation (all classes and methods have adequate Javadoc comments)
+  - [x] All Exceptions are caught and logged
   - [x] Data useful to the application is retrieved from a third party API
     - [x] [API Ninjas - Currency Converter](https://api-ninjas.com/api/convertcurrency)
-    - [x] [OpenWeatherMap - Weather](https://openweathermap.org/)
+    - [x] [OpenWeatherMap - Weather & Geocoding](https://openweathermap.org/)
   - [x] Server is hosted on AWS
 
 
