@@ -41,7 +41,7 @@ submitBtn.addEventListener('click', function(e) {
         console.log(error);
     }
 
-})
+}) //END OF CURRENCY FUNCTION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 let submitButton = document.getElementById("button-predict");
 console.log(submitButton);
@@ -60,10 +60,10 @@ submitButton.addEventListener("click", function(event) {
     }).then(response => response.json())
         .then(function(data) {
             console.log(data)
-            document.getElementById("userForecast").append(cityName)
+            document.getElementById("userForecast").innerText = cityName;
             
             console.log(data['list'][0])
-                document.getElementById("6").append("Date and Time: ")
+                document.getElementById("6").innerHTML = "Date and Time: "
                 document.getElementById("6").append(data['list'][0]["dt_txt".slice(0,9)])
                 document.getElementById("6").append("  Min Temp: ")
                 document.getElementById("6").append(data['list'][0]["tempMin"])
@@ -74,7 +74,7 @@ submitButton.addEventListener("click", function(event) {
                 document.getElementById("6").append("   Weather: ")
                 document.getElementById("6").append(data['list'][4]['weather'][0]["description"])
                 
-                document.getElementById("7").append("Date and Time: ")
+                document.getElementById("7").innerHTML = "Date and Time: "
                 document.getElementById("7").append(data['list'][8]["dt_txt"])
                 document.getElementById("7").append("  Min Temp: ")
                 document.getElementById("7").append(data['list'][8]["tempMin"])
@@ -85,7 +85,7 @@ submitButton.addEventListener("click", function(event) {
                 document.getElementById("7").append("   Weather: ")
                 document.getElementById("7").append(data['list'][4]['weather'][0]["description"])
 
-                document.getElementById("8").append("Date and Time: ")
+                document.getElementById("8").innerHTML = "Date and Time: "
                 document.getElementById("8").append(data['list'][16]["dt_txt"])
                 document.getElementById("8").append("  Min Temp: ")
                 document.getElementById("8").append(data['list'][16]["tempMin"])
@@ -96,7 +96,7 @@ submitButton.addEventListener("click", function(event) {
                 document.getElementById("8").append("   Weather: ")
                 document.getElementById("8").append(data['list'][4]['weather'][0]["description"])
 
-                document.getElementById("9").append("Date and Time: ")
+                document.getElementById("9").innerHTML = "Date and Time: "
                 document.getElementById("9").append(data['list'][24]["dt_txt"])
                 document.getElementById("9").append("  Min Temp: ")
                 document.getElementById("9").append(data['list'][24]["tempMin"])
@@ -107,7 +107,7 @@ submitButton.addEventListener("click", function(event) {
                 document.getElementById("9").append("   Weather: ")
                 document.getElementById("9").append(data['list'][4]['weather'][0]["description"])
 
-                document.getElementById("0").append("Date and Time: ")
+                document.getElementById("0").innerHTML = "Date and Time: "
                 document.getElementById("0").append(data['list'][32]["dt_txt"])
                 document.getElementById("0").append("  Min Temp: ")
                 document.getElementById("0").append(data['list'][32]["tempMin"])
@@ -123,11 +123,8 @@ submitButton.addEventListener("click", function(event) {
                 if (x.style.visibility === "hidden") {
                     x.style.visibility = "visible";
                 }
-         
         });
-
-    
-})
+}) //END OF FORECAST FUNCTION!!!!!!!!!!!!!!!!!!!
     
 
 
