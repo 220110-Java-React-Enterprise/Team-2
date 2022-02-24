@@ -1,10 +1,6 @@
 package com.revature.team2.project2.travelplanner.beans.controllers;
 
 
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -25,18 +21,12 @@ import com.revature.team2.project2.travelplanner.beans.repositories.UserItinerar
 @RequestMapping("/users/itineraries")
 public class UserItinerariesController {
 	private final UserItineraryRepository userItineraryRepository;
-<<<<<<< Updated upstream
-	
 
-	
-=======
-
->>>>>>> Stashed changes
 	@Autowired
 	public UserItinerariesController(UserItineraryRepository repo) {
 		this.userItineraryRepository = repo;
 	}
-<<<<<<< Updated upstream
+
 	
 	
 	// GET itinerary
@@ -74,7 +64,6 @@ public class UserItinerariesController {
     }
     
     
-=======
 
 	// GET itinerary
 	@RequestMapping(method = RequestMethod.GET)
