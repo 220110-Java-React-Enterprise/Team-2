@@ -1,12 +1,11 @@
 package com.revature.team2.project2.travelplanner.beans.models;
 
-import java.sql.DatabaseMetaData;
-import java.sql.ResultSet;
-
-import javax.persistence.*;
-import javax.sql.DataSource;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 

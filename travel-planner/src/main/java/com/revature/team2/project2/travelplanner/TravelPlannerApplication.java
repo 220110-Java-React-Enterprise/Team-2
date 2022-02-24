@@ -19,26 +19,25 @@ import org.springframework.context.ApplicationContext;
 @SpringBootApplication(scanBasePackages = "com.revature.team2.project2.travelplanner.beans")
 public class TravelPlannerApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(TravelPlannerApplication.class, args);
+  public static void main(String[] args) {
+    SpringApplication.run(TravelPlannerApplication.class, args);
 
-
-		// ! TESTING STUFF
+    // ! TESTING STUFF
     ApplicationContext context = ApplicationContextProvider.getApplicationContext();
 
     AdminRepository adminRepository = context.getBean(AdminRepository.class);
     UserRepository userRepository = context.getBean(UserRepository.class);
     ItineraryRepository itineraryRepository = context.getBean(ItineraryRepository.class);
     UserItineraryRepository userItineraryRepository = context.getBean(UserItineraryRepository.class);
-    //userItineraryRepository = context.getBean(UserItineraryRepository.class);
+    // userItineraryRepository = context.getBean(UserItineraryRepository.class);
 
     adminRepository.save(new Admin("jon", "gons", "jons", "pass"));
 
-    userRepository.save(new User("billy", "bob", "bobilly@billy.bob", "bobilly", "yllibob"));
+    userRepository.save(new User("billy", "bob", "bobilly@billy.bob", "yllibob"));
 
     itineraryRepository.save(new Itinerary("Marshall, TX", "Airplane", 1500));
 
-    User steve = new User("steve", "steve", "steve@steve.steve", "steve", "steve");
+    User steve = new User("steve", "steve", "steve@steve.steve", "steve");
     userRepository.save(steve);
     steve.addItinerary(itineraryRepository.getById(1));
     userRepository.save(steve);
@@ -64,7 +63,6 @@ public class TravelPlannerApplication {
       log(u.getDestination());
     }
 
-
     ArrayList<User_Itinerary> U = (ArrayList<User_Itinerary>) userItineraryRepository.findAll();
     log(U.size());
     for (int i = 0; i < U.size(); i++) {
@@ -73,7 +71,7 @@ public class TravelPlannerApplication {
       log(u.getItineraries_itinerary_id() + "   " + u.getUser_user_id());
       log(u.getUser());
       log(u.getItinerary());
-      log("" + u.getItinerary().getItinerary_id()+"  "+(a.getItinerary_id()));
+      log("" + u.getItinerary().getItinerary_id() + "  " + (a.getItinerary_id()));
       log(">>> " + u.getItinerary().equals(itineraryRepository.getById(1)));
       log(u.getItinerary());
       log(">>" + u.getUser().equals(steve));
@@ -87,7 +85,5 @@ public class TravelPlannerApplication {
   public static void log(Object o) {
     System.out.println(o.toString());
   }
-  
+
 }
-
-

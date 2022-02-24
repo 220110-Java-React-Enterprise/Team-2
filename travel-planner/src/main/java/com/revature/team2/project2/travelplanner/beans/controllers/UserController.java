@@ -1,23 +1,22 @@
 package com.revature.team2.project2.travelplanner.beans.controllers;
 
+import java.util.List;
+import java.util.Optional;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.team2.project2.travelplanner.beans.models.User;
 import com.revature.team2.project2.travelplanner.beans.repositories.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-import com.revature.team2.project2.travelplanner.beans.models.User;
-import com.revature.team2.project2.travelplanner.beans.repositories.UserRepository;
-
-import java.sql.DatabaseMetaData;
-import java.sql.ResultSet;
 import lombok.extern.slf4j.Slf4j;
-
-import java.util.List;
-import java.util.Optional;
-
-import javax.sql.DataSource;
 
 /**
  * Controller to guide requests related to Users.

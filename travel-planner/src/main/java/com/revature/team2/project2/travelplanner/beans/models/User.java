@@ -1,14 +1,15 @@
 package com.revature.team2.project2.travelplanner.beans.models;
 
-import java.sql.DatabaseMetaData;
-import java.sql.ResultSet;
 import java.util.LinkedList;
 import java.util.List;
 
-import javax.persistence.*;
-import javax.sql.DataSource;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -25,11 +26,11 @@ import lombok.Setter;
 @Entity
 @Table(name = "users")
 public class User {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "user_id")
-  @JsonIgnore
-  private Integer user_id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "user_id")
+	@JsonIgnore
+	private Integer user_id;
 
 	@Column(name = "first_name")
 	private String firstName;
@@ -37,26 +38,27 @@ public class User {
 	@Column(name = "last_name")
 	private String lastName;
 
-	@Column(name = "email")
+	@Column(name = "email", unique = true, nullable = false)
 	private String email;
 
-  @Column(name = "email", unique = true, nullable = false)
-  private String email;
+	@Column(name = "password", nullable = false)
+	private String password;
 
-  @Column(name = "password", nullable = false)
-  private String password;
+	@Column(name = "itineraries")
+	@OneToMany
+	@JsonIgnore
+	private List<Itinerary> itineraries = new LinkedList<>();
 
-  @Column(name = "itineraries")
-  @OneToMany
-  @JsonIgnore
-  private List<Itinerary> itineraries = new LinkedList<>();
+	public User(String firstName, String lastName, String email, String password) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.password = password;
+	}
 
-  public User(String firstName, String lastName, String email, String password) {
-      this.firstName = firstName;
-      this.lastName = lastName;
-      this.email = email;
-      this.password = password;
-  }
+	public void addItinerary(Itinerary itinerary) {
+		itineraries.add(itinerary);
+	}
 
 	public void removeItinerary(Itinerary itinerary) {
 		itineraries.remove(itinerary);
@@ -76,8 +78,7 @@ public class User {
 				return true;
 		} else
 			return false;
-		
-		
+
 		return false;
 	}
 }

@@ -1,12 +1,11 @@
 package com.revature.team2.project2.travelplanner.beans.models;
 
-import java.sql.DatabaseMetaData;
-import java.sql.ResultSet;
-
-import javax.persistence.*;
-import javax.sql.DataSource;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -49,8 +48,5 @@ public class Admin {
         this.userName = userName;
         this.password = password;
     }
-    
-  
-    
 
 }
