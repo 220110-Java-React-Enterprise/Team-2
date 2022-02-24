@@ -21,21 +21,13 @@ regButton.addEventListener('click', function (e) {
     console.log("email: ", email);
     console.log("password: ", password);
 
-    // build the user object
-    const user = {
-        //firstName: firstName,
-        //lastName: lastName,
-        email: email,
-        password: password
-    }
-
     // build the options object (for fetch)
     const options = {
         method: 'GET',
         //body: JSON.stringify(user),
-        //headers: {
-            //'Content-Type': 'application/json;charset=utf-8'
-        //}
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+        }
     }
 
     // build the search parameters
@@ -48,7 +40,9 @@ regButton.addEventListener('click', function (e) {
     // send the request
     // TODO output post's response to user
     let fetched = fetch(url, options)
-        .then((response) => response.json())
+        .then((response) => {
+            return response.json();
+        })
         .then((data) => {
             console.log("Success: ", data);
         })
