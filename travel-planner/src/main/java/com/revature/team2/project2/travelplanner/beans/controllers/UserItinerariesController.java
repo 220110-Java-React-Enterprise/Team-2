@@ -1,7 +1,10 @@
 package com.revature.team2.project2.travelplanner.beans.controllers;
 
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -22,13 +25,18 @@ import com.revature.team2.project2.travelplanner.beans.repositories.UserItinerar
 @RequestMapping("/users/itineraries")
 public class UserItinerariesController {
 	private final UserItineraryRepository userItineraryRepository;
+<<<<<<< Updated upstream
 	
 
 	
+=======
+
+>>>>>>> Stashed changes
 	@Autowired
 	public UserItinerariesController(UserItineraryRepository repo) {
 		this.userItineraryRepository = repo;
 	}
+<<<<<<< Updated upstream
 	
 	
 	// GET itinerary
@@ -66,4 +74,36 @@ public class UserItinerariesController {
     }
     
     
+=======
+
+	// GET itinerary
+	@RequestMapping(method = RequestMethod.GET)
+	public List<User_Itinerary> getUserItineraries() {
+		
+		return userItineraryRepository.findAll();
+	}
+
+	// GET itinerary by Id
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	public List<Itinerary> getItineraryByID(@PathVariable Integer id) {
+		// return userItineraryRepository.findById(id);
+		System.out.println("");
+		System.out.println("8675309");
+		ArrayList<User_Itinerary> U = (ArrayList<User_Itinerary>) userItineraryRepository.findAll();
+		ArrayList<Itinerary> I = new ArrayList<Itinerary>();
+		// log(U.size());
+		for (int i = 0; i < U.size(); i++) {
+			if (U.get(i).getUser_user_id() == id)
+				I.add(U.get(i).getItinerary());
+		}
+		return I;
+	}
+
+	// DELETE itinerary
+	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+	public void deleteItineraryById(@PathVariable Integer id) {
+		userItineraryRepository.deleteById(id);
+	}
+
+>>>>>>> Stashed changes
 }
