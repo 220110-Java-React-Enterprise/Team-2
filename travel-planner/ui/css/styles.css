@@ -7,6 +7,12 @@ body{
   
 }
 
+hr {
+    color: #6998AB;
+    background-color: #6998AB;
+    height: 1px;
+}
+
 h1 {
     color: #B1D0E0;
     font-size: 50px;
@@ -22,6 +28,7 @@ h3 {
 }
 h4 {
     color: #6998AB;
+    font-size: 20px;
 }
 h5 {
     color: #6998AB;
