@@ -6,8 +6,8 @@ Have you been wasting time with expensive travel agents? Or maybe you've found y
   - [x] As a guest, I can view exchange rate between two currencies.
   - [x] As a guest, I can view weather about a travel location.
   - [x] As a guest, I can register for an account.
-  - [ ] As a user, I can login to an account.
-  - [ ] As a user, I can delete my account.
+  - [x] As a user, I can login to an account.
+  - [x] As a user, I can delete my account.
   - [ ] As a user, I can save an itinerary.
 
 
