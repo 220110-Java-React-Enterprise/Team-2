@@ -79,4 +79,3 @@ submitButton.addEventListener("click", function(event) {
         y.style.visibility = "visible";
     } 
 })
-
