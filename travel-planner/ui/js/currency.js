@@ -20,19 +20,20 @@ submitBtn.addEventListener('click', function(e) {
         },
         method: "get",
         
-    }).then(response => response.json())
+    }).then(response => {
+        return response.json();
+    })
     .then(function(data) {
         console.log(data)
-        document.getElementById("new_amount").append(data)
+        document.getElementById("new_amount").innerHTML = data;
 
     });
 
     var x = document.getElementById("result");
         if (x.style.visibility === "hidden") {
             x.style.visibility = "visible";
-        } else {
-            x.style.visibility = "hidden";
         }
+        
 
     try {
         let result = response.json;

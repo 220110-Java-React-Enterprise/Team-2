@@ -20,10 +20,12 @@ submitBtn.addEventListener('click', function(e) {
         },
         method: "get",
         
-    }).then(response => response.json())
+    }).then(response => {
+        return response.json();
+    })
     .then(function(data) {
         console.log(data)
-        document.getElementById("new_currency_amount").append(data)
+        document.getElementById("new_currency_amount").innerHTML = data;
 
     });
 
