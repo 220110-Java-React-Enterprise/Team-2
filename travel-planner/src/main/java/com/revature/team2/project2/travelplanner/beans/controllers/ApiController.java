@@ -12,13 +12,20 @@ import com.revature.team2.project2.travelplanner.beans.models.Geo;
 import com.revature.team2.project2.travelplanner.beans.models.Weather;
 
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.ResponseBody;
 
+
+/**
+ * Controller to guide consumption of third-party APIs.
+ */
 @RestController
 @RequestMapping("/api")
 @Slf4j
@@ -26,8 +33,14 @@ public class ApiController {
     private String keyNinja;
     private String keyWeather;
 
+
     /**
      * GET request for the Currency Converter API.
+     * 
+     * @param want   the currency code that you are looking for
+     * @param have   the currency code that you currently have
+     * @param amount the currency amount to convert
+     * @return the converted currency amount
      */
     @GetMapping(value = "/convert", produces = { MediaType.APPLICATION_JSON_VALUE })
     public Double convertRequest(@RequestParam String want, @RequestParam String have, @RequestParam String amount) {
@@ -66,8 +79,16 @@ public class ApiController {
         return new_amount;
     }
 
+
     /**
      * GET request for the Weather API.
+     * Utilizes an additional call to the Geocoding API
+     * for conversion of city to latitude & longitude.
+     * 
+     * @param cityName    name of city to check for
+     * @param stateCode   OPTIONAL, state code for US searches
+     * @param countryCode OPTIONAL, country code for city in country search
+     * @return JSON string containing data from API response
      */
     // TODO stateCode & countryCode?
     @GetMapping(value = "/weather", produces = { MediaType.APPLICATION_JSON_VALUE })
@@ -101,6 +122,7 @@ public class ApiController {
             url += String.format("&limit=%d&appid=%s", 1, keyWeather);
 
             // build the request
+
             Request request = new Request.Builder()
                     .url(url)
                     .get()
@@ -155,14 +177,12 @@ public class ApiController {
         return jsonString;
     }
 
+
     /**
      * Retrieve the apikey information from the respective properties file.
-     * 
      * @return apikey
      */
-    // indicates that the method should be called exactly once after dependencies
-    // are injected
-    @PostConstruct
+    @PostConstruct // called exactly once after dependencies are injected
     private void loadApiKeys() {
         try {
             // properties file

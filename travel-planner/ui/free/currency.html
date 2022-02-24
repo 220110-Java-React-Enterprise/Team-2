@@ -17,8 +17,7 @@
 
   <div>
 
-    <h3>Currency Exchange Calculator</h3>
-
+    <h1>Currency Exchange Calculator</h1>
     <form id="form1" method="get" onsubmit="getNewAmount()">
      
           <label for="have">Original Currency:</label>
@@ -34,15 +33,15 @@
         <input required type="text" id="want" name="want" value=""><br>
 
         
-      <button id="calcButton" type="submit" value="submit" style="margin-top: 2%; margin-bottom: 2%;">Calculate</button>
-
+      <button  id="calcButton" type="submit" value="submit" style="margin-top: 2%; margin-bottom: 2%;">Calculate</button>
     </form>
 
-    <div id = "result">
-        <label id="new_amount" for="new_amount">Target Currency Amount:</label>
+    <div style="visibility: hidden;" id = "result">
+        <h2>Target Currency Amount: </h2>
+        <h2 id="new_amount" for="new_amount"></h2>
         
     </div>
-
+      <hr>
     <div>
       <h3>Return to Home Page? <button><a href="../index.html">Home</a></button></h3>
     </div>
