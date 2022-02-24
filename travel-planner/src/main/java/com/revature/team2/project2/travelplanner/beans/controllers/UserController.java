@@ -7,10 +7,17 @@ import com.revature.team2.project2.travelplanner.beans.repositories.UserReposito
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import com.revature.team2.project2.travelplanner.beans.models.User;
+import com.revature.team2.project2.travelplanner.beans.repositories.UserRepository;
+
+import java.sql.DatabaseMetaData;
+import java.sql.ResultSet;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
 import java.util.Optional;
+
+import javax.sql.DataSource;
 
 /**
  * Controller to guide requests related to Users.
@@ -113,6 +120,9 @@ public class UserController {
         // return the result
         return resultString;
     }
+    
+    
+
 
     /**
      * DELETE a User by id.

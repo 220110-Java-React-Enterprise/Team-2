@@ -6,18 +6,30 @@ import java.util.Properties;
 
 import javax.annotation.PostConstruct;
 
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.team2.project2.travelplanner.beans.models.Currency;
 import com.revature.team2.project2.travelplanner.beans.models.Geo;
 import com.revature.team2.project2.travelplanner.beans.models.Weather;
 
 import org.springframework.http.MediaType;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import org.springframework.web.bind.annotation.*;
+
 
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+
+import okhttp3.Response;
+
+
 import okhttp3.ResponseBody;
+
 
 /**
  * Controller to guide consumption of third-party APIs.
@@ -25,9 +37,12 @@ import okhttp3.ResponseBody;
 @RestController
 @RequestMapping("/api")
 @Slf4j
+//TODO parse API request parameters from user
+//TODO geocoding API for cities -> lat/lon?
 public class ApiController {
     private String keyNinja;
     private String keyWeather;
+
 
     /**
      * GET request for the Currency Converter API.
@@ -37,11 +52,8 @@ public class ApiController {
      * @param amount the currency amount to convert
      * @return the converted currency amount
      */
-    @GetMapping(value = "/convert", produces = { MediaType.APPLICATION_JSON_VALUE })
-    public Double convertRequest(@RequestParam String want, @RequestParam String have, @RequestParam String amount) {
-        // thing to return
-        Double new_amount = null;
-
+    @GetMapping("/convert")
+    public void convertRequest() {
         try {
             // client to do req/resp through
             OkHttpClient client = new OkHttpClient();
@@ -54,25 +66,17 @@ public class ApiController {
                     .addHeader("x-api-key", keyNinja)
                     .build();
 
-            // response body that holds response information
-            ResponseBody responseBody = client.newCall(request).execute().body();
+            // response that holds response information
+            Response response = client.newCall(request).execute();
 
-            // create an object mapper
-            ObjectMapper mapper = new ObjectMapper();
-
-            // map the response to our entity
-            Currency currency = mapper.readValue(responseBody.string(), Currency.class);
-
-            // update the value to return
-            new_amount = currency.getNew_amount();
+            // convert response body to a "readable" string
+            System.out.println(response.body().string());
 
         } catch (Exception e) {
             log.error("api/convert request error", e);
         }
-
-        // return the loaded value, null otherwise
-        return new_amount;
     }
+
 
     /**
      * GET request for the Weather API.
@@ -116,6 +120,7 @@ public class ApiController {
             url += String.format("&limit=%d&appid=%s", 1, keyWeather);
 
             // build the request
+
             Request request = new Request.Builder()
                     .url(url)
                     .get()
@@ -170,9 +175,9 @@ public class ApiController {
         return jsonString;
     }
 
+
     /**
      * Retrieve the apikey information from the respective properties file.
-     * 
      * @return apikey
      */
     @PostConstruct // called exactly once after dependencies are injected
