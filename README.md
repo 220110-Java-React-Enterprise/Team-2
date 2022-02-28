@@ -8,10 +8,10 @@ Have you been wasting time with expensive travel agents? Or maybe you've found y
   - [x] As a guest, I can register for an account.
   - [x] As a user, I can login to an account.
   - [x] As a user, I can delete my account.
-  - [ ] As a user, I can save an itinerary.
 
 
 ### Bonus Stories
+  - [ ] As a user, I can save an itinerary.
   - [ ] As a user, I can get alerts about situations in areas I would travel to, like disease outbreaks.
   - [ ] As a user, I can see recommendations about restaurants and other businesses in the area.
   - [ ] As an admin, I can access any user account.
